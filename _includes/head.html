@@ -1,4 +1,5 @@
 <head>
+	<base href="{{ site.url }}">
 	{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% elsif site.permalink contains category_dir %}{{ '/' | page.url | remove:'index.html' | '/' }}{% else %}{{ page.url | remove:'index.html' | '/' }}{% endif %}{% endcapture %}
 	<link href="//gmpg.org/xfn/11" rel="profile">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">{% if page.article %}
@@ -26,5 +27,4 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/atom.xml">
 	<script type="text/javascript" src="/assets/js/jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.stellar.min.js"></script>
-	<base href="{{ site.url }}">
 </head>
