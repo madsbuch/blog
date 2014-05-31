@@ -6,7 +6,7 @@ highlighter:	true
 permalink:	/blog/:title
 
 # Setup
-title:		Thinny
+title:		Mads's Blog
 tagline:	'blog'
 description:	'My personal blog.'
 url:		http://buchi.dk/blog/
