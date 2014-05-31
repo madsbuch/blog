@@ -20,8 +20,8 @@ author:
 paginate:	5
 
 # Custom vars
-icon:		/assets/images/icon.png
-cover:		/assets/images/cover.jpg
+icon:		assets/images/icon.png
+cover:		assets/images/cover.jpg
 
     
 copyright:
