@@ -9,7 +9,7 @@ permalink:	    /blog/blog/:title
 title:		    Mads's Blog
 tagline:	    'blog'
 description:	'My personal blog.'
-baseurl:        "blog"
+baseurl:        "/blog/"
 url:            http://buchi.dk/
 commentsystem:	google
 disqus:		    example
