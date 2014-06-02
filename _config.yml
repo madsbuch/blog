@@ -1,18 +1,18 @@
 # Dependencies
-markdown:	kramdown
+markdown:	    kramdown
 highlighter:	true
 
 # Permalinks
-permalink:	/blog/:title
+permalink:	    /blog/blog/:title
 
 # Setup
-title:		Mads's Blog
-tagline:	'blog'
+title:		    Mads's Blog
+tagline:	    'blog'
 description:	'My personal blog.'
-baseurl:	"blog"
-url:		http://buchi.dk/
+baseurl:        "blog"
+url:            http://buchi.dk/
 commentsystem:	google
-disqus:		example
+disqus:		    example
 
 author:
   name:		'Mads Buch'
