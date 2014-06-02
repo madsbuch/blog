@@ -3,7 +3,7 @@ markdown:	    kramdown
 highlighter:	true
 
 # Permalinks
-permalink:	    /blog/blog/:title
+permalink:	    :title
 
 # Setup
 title:		    Mads's Blog
