@@ -1,6 +1,6 @@
 # Dependencies
 markdown:	    kramdown
-highlighter:	true
+highlighter:	pygments
 
 # Permalinks
 permalink:	    :title
@@ -21,7 +21,7 @@ author:
 paginate:	5
 
 # Custom vars
-#icon:		assets/images/icon.png
+icon:		assets/images/icon.png
 cover:		assets/images/cover.jpg
 
     
