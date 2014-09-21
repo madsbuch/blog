@@ -16,7 +16,8 @@ disqus:		    example
 
 author:
   name:		'Mads Buch'
-  url:		https://plus.google.com/+MadsBuch
+  url:		https://plus.google.com/+MadsBuch?rel=author
+  gpUrl:	https://plus.google.com/+MadsBuch
 
 paginate:	5
 
