@@ -11,7 +11,7 @@ providing in a little green mark. When the green mark is not easily obtainable,
 divide and conquer is applied with more and easier tests.
 In this article I try to decompose the process of testing to that of specifying
 and verifying. I relate this notion to places where verification are
-mathematically used to bond a specification and an implementation._
+mathematically used to bind a specification and an implementation._
 
 ## Introduction
 In the software development community it has become obvious that software has to
@@ -34,14 +34,14 @@ shows that it consists of two components. First a specification is formulated,
 which is later verified against the actual implementation.
 
 This split is necessary to be able to talk about the process in a broader term.
-Within proven software specifications are mathematically proven to be
+Within proven software, specifications are mathematically proven to be
 implemented in a correct manner, hence the term testing is to vague (at least in
 my consciousness) as we do not necessarily test a finite set of the input for a
 given procedure.
 
 ### The premises
 Implicitly, and now explicitly, I advocate testing. My opinion is that testing
-should take up as many resources as implementing. Of cause this opinion is not
+should take up as many resources as implementing. Of course this opinion is not
 strict, and many condition are in play when deciding the amount of resources
 spend on verifying code. I trust the reader in knowing when to test. At least
 it is not the main aim for this article.
@@ -81,7 +81,8 @@ public class TestAddition {
 {% endhighlight %}
 The above is an example drawn from Java, where a method is named to specify what
 we are going to test. The function name is here seen as the specification for
-what we are going to verify. The specification is here very informal formulated.
+what we are going to verify. It is given that the specification is informally
+defined.
 
 {% highlight coq %}
 Definition specification_of_addition (f: nat -> nat -> nat) :=
@@ -91,7 +92,8 @@ Definition specification_of_addition (f: nat -> nat -> nat) :=
   (forall a b : nat,
      f (S a) b = f a (S b)).
 {% endhighlight %}
-This example is on the other hand thoroughly expressed in a specific syntax.
+This example of a specification is, on the other hand, thoroughly expressed in
+a specific syntax.
 
 It should be noted that there is a difference on the two examples. The first one
 is addition in Java's type system, integers with a given precision. In Coq we
@@ -99,7 +101,7 @@ show that it holds for all natural numbers.
 
 ### Implementation
 The implementation is, usually, the well known part. Following is a suggestion
-for some code that implements theie specification. So far, though, you only have
+for some code that implements their specification. So far, though, you only have
 my word that what I have expressed is also what is implemented.
 
 {% highlight java %}
@@ -175,7 +177,7 @@ Qed.
 {% endhighlight %}
 
 For Coq, on the other hand, the specification are read by the theorem prover.
-Here I provide a _certificate_ that bonds the specification to the
+Here I provide a _certificate_ that binds the specification to the
 implementation. Coq afterwards verifies that this certificate is valid.
 
 ## Discussion
@@ -215,7 +217,7 @@ software, we still have to remember what we verify. We do not verify that the
 software does what it is supposed to do. We verify that the software does
 what we have specified in the specification.
 
-By this I emphasis the importance of doing simple and easily understandable
+By this I emphasise the importance of doing simple and easily understandable
 testing, were one can easily verify that the output is correct. I encourage
 people to play with their software and try to break it. After all they could
 have expressed the specification wrong.
