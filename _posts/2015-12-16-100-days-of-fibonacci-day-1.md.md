@@ -9,21 +9,21 @@ Yesterday I implemented the directly recursive and the tail recursive Fibonacci
 algorithms in Haskell. Today I decided to take one of the most widely known
 languages and implement of iterative edition of the Fibonacci function.
 
-# Day 1 / C
+# Day 1 - C
 In C I implemented Fibonacci iteratively. In the implementation I have used 
 the type `long` to store intermediate results and return values. It
 guarantees 32 bit of storage, which makes good room for overflow.
 
 {% highlight c %}
-    unsigned long fib_iterative(long n){
-        unsigned long i=0, a=0, b=1;
-        for(i=1 ; i<=n ; i++){
-            unsigned long tmp = a+b;
-            a = b;
-            b=tmp;
-        }
-        return a;
+unsigned long fib_iterative(long n){
+    unsigned long i=0, a=0, b=1;
+    for(i=1 ; i<=n ; i++){
+        unsigned long tmp = a+b;
+        a = b;
+        b=tmp;
     }
+    return a;
+}
 {% endhighlight %}
 
 Overflows is something one needs to be careful about in C. C provides
