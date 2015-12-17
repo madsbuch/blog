@@ -39,7 +39,7 @@ private static BigInteger fibDynamic(int n, Hashtable<Integer, BigInteger> mem){
     mem.put(new Integer(n), fibDynamic(n-1, mem).add(fibDynamic(n-2, mem)));
     return mem.get(n);
 }
-{% endhighligh %}
+{% endhighlight %}
 
 To keep the type signature to that of the other functions, we build an 
 overloaded wrapper method, which initializes a hash table, runs the
@@ -53,7 +53,7 @@ private static BigInteger fibDynamic(int n){
     Hashtable<Integer, BigInteger> mem = new Hashtable<Integer, BigInteger>(n+1);
     return fibDynamic(n, mem);
 }
-{% endhighligh %}
+{% endhighlight %}
 
 The code is as usual available and can be found
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.java). 
