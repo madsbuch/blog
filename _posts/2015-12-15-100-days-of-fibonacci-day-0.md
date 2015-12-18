@@ -13,21 +13,21 @@ many techniques.
 
 Later on I worked with my friend
 [Anders Schmidt](http://www.andersschmidt.com/) who showed me 
-Paul Flavius Nechita [100 Days UI Challenge](http://www.100daysui.com/).
-I thought it was cool and wanted to do something similar, but
+Paul Flavius Nechita's [100 Days UI Challenge](http://www.100daysui.com/).
+I thought it was cool and wanted to do something similar. But
 I do not design. So I decided to do it with Fibonacci
 in 100 different programming languages. The idea is to showcase
 some typical aspects of a programming language and implement the
-function in language idiomatic ways.
+function in the different languages idiomatic ways.
 
 # Day 0 - Haskell!
-Where else to start? Here we look at Haskell as a practical
+Where else would you start? Here we look at Haskell as a practical
 general purpose language.
 
-In Haskell I have done two different implementations. First the
-recursive way as we'd usually think problems in a functional
-context. We use pattern matching to pick out the base cases and
-the induction case.
+In Haskell I have done two different implementations. First, the
+recursive way, which is the way we usually think of problems in
+a functional context. We use pattern matching to pick out the
+base and induction cases.
 
 {% highlight haskell %}
 -- Standard recursive implementation, very slow
@@ -37,9 +37,10 @@ fib 1 = 1
 fib n = fib (n - 1) + fib (n - 2)
 {% endhighlight %}
 
-However, it turns out that this solution is quite slow.
-Luckily there is advice! So I implemented it the tail-recursive
-way also
+However, it turns out that this solution is quite slow due to the
+exponential fanout with the two recursive calls.
+Luckily there is another way! So I implemented it using recursion
+with an accumulator:
 
 {% highlight haskell %}
 -- Using an accumulator
@@ -52,10 +53,10 @@ fibAcc n = doFib n (0,1)
 {% endhighlight %}
 
 To keep the type signature identical to the other Fibonacci
-we uses the `ẁhere` construction.
+we uses the `ẁhere` construction to wrap the actual function.
 
-Lastly we need to make a command line program that takes the number, _n_,
-we wanna calculate _fib(n)_ for. As Haskell is pure and lazy, we
+Lastly we need to make a command line program that takes the number (i.e. _n_)
+that we want to calculate $$ fib(n) $$ for. As Haskell is pure and lazy, we
 can't simply in line system calls like we do in c. In Haskell a monadic
 style is chosen.
 
@@ -67,7 +68,7 @@ main = do
 {% endhighlight %}
 
 In the above example we first read the list of arguments into
-`a`, where after we parse the first (0th) element and calculate
+`a`, thereafter we parse the first (0th) element and calculate
 the corresponding Fibonacci number. The result is converted
 to a string and written back to the command line.
 
@@ -78,16 +79,20 @@ The file is available for download
 In this first implementation we used two techniques for implementing
 the Fibonacci function:
 
-* __Recursion:__ The typical way of thinking of problems in a
+* __Recursion:__ This is the typical way of thinking of problems in a
   functional context. In this case it has a exponential
   time complexity. This is bad, as we know that the Fibonacci
   function can be implemented faster.
-* __Tail Recursion[^tailRecursion]:__ The idea is that
-  we only keep track of
-  the last stack frame. For Fibonacci we only care about the two
-  previous results. This approach lets us, by an accumulator,
-  forget all intermediate results and only pass forward the
-  data we need. For Fibonacci we achieve a linear time complexity.
+* __Recursion with accumulator:__ The idea is that we immidiatly
+  accumulate partial results into an accumulator which is passed
+  on to the next call.
+  For Fibonacci we only care about the two
+  previous results. This approach lets us forget all intermediate
+  results and only pass forward the
+  data we need. This lets us achieve a linear time complexity.
+  Furthermore many compilers provide tail call optimization. In
+  that way we have constant space consumption and do not suffer from
+  stack overflows.
 
 # Haskell
 Here we take offset in Haskell as a general purpose language.
@@ -96,9 +101,11 @@ system which enables us to reason quite fine grained about our
 programs.
 
 However, the concerns we have with Haskell here is how well
-it integrates with the system and the complexity of the output
+it integrates with other lagnauges and the complexity of the output
 code. As seen it is relatively easy to implement a linear
-algorithm of Fibonacci. Functional programming has in general
+algorithm of Fibonacci.
+
+Functional programming has in general
 shown good progress in outputting efficient code, and for many
 applications the generally superior readability is better
 than squeezing that last performance out of the CPU.
@@ -108,6 +115,3 @@ example shows the use of command line arguments, which are fairly
 straight forward. Furthermore Haskell supports
 [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) for
 both importing and exporting functions.
-
-
-[^tailRecursion]: [Tail recursion in the Haskell wiki](https://wiki.haskell.org/Tail_recursion)
