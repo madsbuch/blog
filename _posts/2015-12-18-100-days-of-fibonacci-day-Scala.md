@@ -51,7 +51,7 @@ $ scala Fib
 55
 {% endhighlight %}
 
-A little riddle: Guess $n$ such that $fib(n) = 55$.
+A little riddle: Guess _n_ such that $$ fib(n) = 55 $$.
 
 The code can as usually be found on GIT
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.scala)
