@@ -53,6 +53,9 @@ $ scala Fib
 
 A little riddle: Guess $n$ such that $fib(n) = 55$.
 
+The code can as usually be found on GIT
+[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.scala)
+
 # Continuation Passing Style
 Continuation passing style is not easy to read, and such it is not a good way
 to implement functions, unless there is a very good reason. These reasons
