@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 100 Days of Fibonacci - Day 0
+title: 100 Days of Fibonacci - Day 0, Haskell
 video: false
 comments: false
 ---
@@ -19,6 +19,10 @@ I do not design. So I decided to do it with Fibonacci
 in 100 different programming languages. The idea is to showcase
 some typical aspects of a programming language and implement the
 function in the different languages idiomatic ways.
+
+Today is the first day of this project. I am going to present Fibonacci
+in Haskell. The formulations of the function is going to be by direct
+recursion and recursion with accumulation.
 
 # Day 0 - Haskell!
 Where else would you start? Here we look at Haskell as a practical
@@ -53,7 +57,7 @@ fibAcc n = doFib n (0,1)
 {% endhighlight %}
 
 To keep the type signature identical to the other Fibonacci
-we uses the `ẁhere` construction to wrap the actual function.
+we uses the `where` construction to wrap the actual function.
 
 Lastly we need to make a command line program that takes the number (i.e. _n_)
 that we want to calculate $$ fib(n) $$ for. As Haskell is pure and lazy, we
@@ -71,6 +75,28 @@ In the above example we first read the list of arguments into
 `a`, thereafter we parse the first (0th) element and calculate
 the corresponding Fibonacci number. The result is converted
 to a string and written back to the command line.
+
+Haskell provides two ways to evaluate a program. It has its REPL
+(read-eval-print loop) where the file can be loaded and the
+program can be compiled.
+
+{% highlight bash %}
+$ ghci Fib.hs
+...
+Ok, modules loaded: Main.
+*Main> fib 10
+55
+*Main> fibAcc 10
+55
+{% endhighlight %}
+
+Alternatively Haskell can be compiled and executed:
+
+{% highlight bash %}
+$ ghc Fib.hs -o fib
+$ ./fib 10
+55
+{% endhighlight %}
 
 The file is available for download
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.hs). 
@@ -115,3 +141,9 @@ example shows the use of command line arguments, which are fairly
 straight forward. Furthermore Haskell supports
 [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) for
 both importing and exporting functions.
+
+# Conclusion
+I have elaborated on the Fibonacci implementation and presented it
+by two formulations: Direct recursion and recursion with an accumulator.
+The language to carry the implementation has been Haskell. Haskell
+was presented and swiftly evaluated.
