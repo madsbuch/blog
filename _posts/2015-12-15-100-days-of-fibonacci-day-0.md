@@ -5,11 +5,11 @@ video: false
 comments: false
 ---
 
-Today I had my computer architecture class for the last time.
+Today I taught my computer architecture class for the last time.
 My students and I discussed the complexity of the various Fibonacci
 algorithms. Fibonacci is a function often used to test out new
-programming languages as it is easy to implement and can show
-showcase many techniques.
+programming languages as it is easy to implement and can showcase
+many techniques.
 
 Later on I worked with my friend
 [Anders Schmidt](http://www.andersschmidt.com/) who showed me 
