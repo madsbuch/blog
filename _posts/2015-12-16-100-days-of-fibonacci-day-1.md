@@ -12,7 +12,7 @@ languages and implement of iterative edition of the Fibonacci function.
 # Day 1 - C
 In C I implemented Fibonacci iteratively. In the implementation I have used 
 the type `long` to store intermediate results and return values. It
-guarantees 32 bit of storage, which makes good room for overflow.
+guarantees 32 bit of storage, which allows us to compute large enough results.
 
 {% highlight c %}
 unsigned long fib_iterative(long n){
@@ -26,12 +26,14 @@ unsigned long fib_iterative(long n){
 }
 {% endhighlight %}
 
-Overflows is something one needs to be careful about in C. C provides
-very little abstraction compared the yesterdays language Haskell. In
-Haskell we used a data type that supported unlimited integer values.
+Overflows are something one needs to be careful about in C. C provides
+very little abstraction compared to yesterdays language Haskell. In
+Haskell we used a data type which supports unlimited integer values.
 This means that the compiler links the code to a library that provides
-a string representation of integers, along with operations. This library
-can also be implemented in C, but is not as easily accessible.
+a string representation of integers, along with operations for working
+on integer strings.
+This library can also be implemented in C, but it is out of scope for
+the project.
 
 The full code for Fibonacci in C is available 
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.c).
@@ -41,17 +43,19 @@ algorithms in C.
 # Iterative Fibonacci
 The iterative Fibonacci has a linear time complexity. This is the same
 as the tail recursive implementation. These two implementations also
-has much in common, which is evident when implementing both.
+have much in common.
 
-The iterative implementation is not an opportunity in pure functional languages
-as it required mutable variables. Note how we change the value of `a` in the
+The iterative implementation con not be implemented in pure
+functional languages because it requires mutable states.
+This is seen when we change the value of `a` in the
 above example by `a = b;`. Furthermore the _while_ concept is not natural to
-functional programming.
+functional programming, where operations on collections of elements
+are done recursively.
 
 # C Programming Language
-C was a language meant to be close to the hardware. As a slight layer
+C was meant to be close to the hardware. As a slight layer
 on assembly programming. A language used for programming operating
-systems and hardware driver. And so, it is fast. It has a minimal
+systems and hardware driver. And so it is fast as it has a minimal
 runtime system and lets the programmer have complete control over
 the hardware.
 
