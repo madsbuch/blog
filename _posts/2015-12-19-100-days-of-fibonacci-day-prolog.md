@@ -39,7 +39,7 @@ By writing `fib_direct(0, 0).` we denote that the predicate predicate
 (SWI Prolog interpreter) we can write `fib_direct(0, X).` to make
 it derive the second argument given the first argument.
 
-{% highlight prolog %}
+{% highlight bash %}
 $ swipl fib.pl 
 % fib.pl compiled 0.00 sec, 4 clauses
 Welcome to SWI-Prolog ...
@@ -54,7 +54,7 @@ The third definition of the `fib_direct` predicate is the one that
 allows us to calculate Fibonacci for arbitrary numbers. We can again
 make prolog derive the result by supplying N
 
-{% highlight prolog %}
+{% highlight bash %}
 ...
 ?- fib_direct(10, R).
 R = 55 .
@@ -71,7 +71,7 @@ This challenge is ideal to solve in Prolog as we can use the
 same code to derive what _n_ is for a given Fibonacci number. We would have
 done something like.
 
-{% highlight prolog %}
+{% highlight bash %}
 ?- fib_direct(N, 55).
 ERROR: fib_direct/2: Arguments are not sufficiently instantiated
 {% endhighlight %}
@@ -79,7 +79,8 @@ ERROR: fib_direct/2: Arguments are not sufficiently instantiated
 But as you can see it fails. This is because of the use of `is/2`.
 
 To remove the use of that operator I have implemented Peano natural
-numbers and define what addition is. 
+numbers and defined what addition is. This allows us to implement
+Fibonacci in a purely structural manner.
 
 {% highlight prolog %}
 % Definiition of the Peano numbers
@@ -104,9 +105,9 @@ fib_peano(s(s(N)), R) :-
     add(A, B, R).
 {% endhighlight %}
 
-Now we don't need to use explicit evaluation.
+And we don't need to use explicit evaluation.
 
-{% highlight prolog %}
+{% highlight bash %}
 ?- fib_peano(s(s(s(s(s(s(s(s(s(s(0)))))))))), R), read_nat(R, X).
 R = s(s(s(s(s(s(s(s(s(s(...)))))))))),
 X = 55 .
@@ -114,33 +115,42 @@ X = 55 .
 
 Note the `read_nat`. This is simply to make it readable.
 
-Now we can put a number in on the result side, and make Prolog
+We can put a number in on the result side, and make Prolog
 derive from where is came (I am not using 55, but a smaller number, 5)
 
-{% highlight prolog %}
+{% highlight bash %}
 ?- fib_peano(N, s(s(s(s(s(0)))))), read_nat(N, X).
 N = s(s(s(s(s(0))))),
 X = 5 .
 {% endhighlight %}
 
 And the result is indeed correct. If we provide a number that
-either is not a Fibonacci number, or a high number (55 was too
-large for me). Prolog will run for a long time and stack overflow.
+either is not in the Fibonacci series or a large number (55 was too
+large for me) Prolog will run for a long time and eventually
+overflow the stack.
+
+The time and space complexity is generally not good when using this
+representation. It is usually only used when reasoning about programs
+(i.e. proving different properties about programs). This makes these
+example practically unusable.
 
 # Programming Through Predicates
 Logic programming has its core in predicates. We define logical
 propositions and make the subsystem derive what we need. This works
 very well when we work on structures like lists and trees. The Fibonacci
-function, however, works on natural numbers. As showed naturals are indeed
-structural when using Peano. This is however slow and not very practical.
+function, however, works on natural numbers which we usually represent
+through integers for direct translation to machine instructions.
+However, as I showed, naturals are indeed structural when using the Peano
+axioms.
 
 Actually all problems may be expressed in structures. This we will
 get back to when discussing theorem provers.
 
 # Conclusion
-Today I lokked at Prolog. I implemented the Fibonacci function
+Today I looked at Prolog. I implemented the Fibonacci function
 in a logic context. We saw that We didn't exploit Prologs ability
 to derive the argument to Fibonacci. To circumvent that, I
 built a structural implementation of natural, using Peano,
 so we didn't have to make explicit evaluation. This implementation
-had the ability, even though it is not practical.
+had the ability to derive what number a given Fibonacci number is,
+even though it is not practical.
