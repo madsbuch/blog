@@ -32,7 +32,7 @@ fib_direct(N, R) :-
 {% endhighlight %}
 
 In above the base cases are defined as simple predicates. The first
-argument is the n'th Fibonacci number while the second is the result.
+argument is the n'th Fibonacci number and the second is the result.
 
 By writing `fib_direct(0, 0).` we denote that the predicate predicate
 `fib_direct` is true when applied 0 for both arguments. In `swipl`
@@ -60,14 +60,14 @@ make prolog derive the result by supplying N
 R = 55 .
 {% endhighlight %}
 
-The problem is that we use the `is/2` notation. This enforces evaluation
+A problem here is that we use the `is/2` notation. It enforces evaluation
 of the right side and puts the result in the variable on the left side.
 This is something we want to avoid in logical programming, as we need the
 right side to be defined. The reason is that we can not choose what to derive
 anymore.
 
 Yesterday I put up a little challenge to try to figure out where 55 came from.
-This challenge would have been ideal to solve in Prolog as we can use the
+This challenge is ideal to solve in Prolog as we can use the
 same code to derive what _n_ is for a given Fibonacci number. We would have
 done something like.
 
