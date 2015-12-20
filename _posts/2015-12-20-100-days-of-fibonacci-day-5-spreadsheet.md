@@ -1,4 +1,4 @@
-g---
+---
 layout: post
 title: 100 Days of Fibonacci - Day 5, Spreadsheet
 video: false
