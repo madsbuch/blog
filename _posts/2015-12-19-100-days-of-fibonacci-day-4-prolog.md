@@ -138,6 +138,9 @@ representation. It is usually only used when reasoning about programs
 (i.e. proving different properties about programs). This makes these
 example practically unusable.
 
+The file can be downloaded
+[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.pl).
+
 # Programming Through Predicates
 Logic programming has its core in predicates. We define logical
 propositions and make the subsystem derive what we need. This works
