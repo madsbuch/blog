@@ -21,7 +21,7 @@ Thereafter I used the formula `=C6+C5` in the third cell. I could then
 simply drag and drop that cell allowing the spreadsheet to calculate
 the respective values.
 
-![Spreadsheet Fibonacci](/media/2015-12-20-100-days-of-fibonacci-day-5-spreadsheet/fib_ods.png)
+![Spreadsheet Fibonacci](/blog/media/2015-12-20-100-days-of-fibonacci-day-5-spreadsheet/fib_ods.png)
 
 The column left to the Fibonacci column is the index of the corresponding
 Fibonacci number.
