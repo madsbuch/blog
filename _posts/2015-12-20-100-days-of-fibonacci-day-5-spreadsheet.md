@@ -32,6 +32,9 @@ Fibonacci numbers. When one has this table she can quickly look up the number
 she needs for further calculation. There might be other classifications
 of this technique using other reasons.
 
+As usual the file is in my Fibonacci snippet folder and can be found
+[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.ods).
+
 # Spreadsheets as Programs
 The main idea with this post is simply to try to broaden up the perception
 of programming. Many people program on a daily basis when they do their
