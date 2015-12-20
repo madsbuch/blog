@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 100 Days of Fibonacci - Day 2
+title: 100 Days of Fibonacci - Day 2, Java
 video: false
 comments: false
 ---

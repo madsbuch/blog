@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 100 Days of Fibonacci - Day 1
+title: 100 Days of Fibonacci - Day 1, C
 video: false
 comments: false
 ---
