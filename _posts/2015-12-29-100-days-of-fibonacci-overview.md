@@ -40,8 +40,7 @@ a little note on what concept was showcased.
 5. [Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/):
    Logic programming, first introduction to problem modeling
    through ADT
-6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/)
-   : Abstraction of the concept of programming.
+6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/): Abstraction of the concept of programming.
 7. [JavaScript](http://buchi.dk/blog/100-days-of-fibonacci-day-6-javascript/):
    Introducing the concept of events in JavaScript. This is a base for
    the concepts of streams, signals, etc. which are introduced later on.
