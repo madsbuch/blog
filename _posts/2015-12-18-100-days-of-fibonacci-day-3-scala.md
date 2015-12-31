@@ -5,16 +5,16 @@ video: false
 comments: false
 ---
 
-Coming from yesterdays Java, Scala is a natural follower. It is
+Coming from yesterdays Java, Scala is a naturally the next step. It is
 a functional language compiled to run on the Java Virtual Machine.
-It integrates easily with Java programs, and such, it is often used
+It integrates easily with Java programs, and as such, it is often used
 in conjunction with Java. Javas API is also available in Scala. This
-makes it easier for Java developers to start with this language if they
+makes it easier for Java developers to start with Scala if they
 want to dive into functional programming.
 
 # Day 3 - Scala
-Today I present an implementation of Fibonacci in continuation passing
-style (CPS). This can easily be done in Scala because of its functional
+Today I present an implementation of Fibonacci in the Continuation Passing
+Style (CPS). This can easily be done in Scala because of its functional
 nature:
 
 {% highlight scala %}
@@ -51,7 +51,8 @@ $ scala Fib
 55
 {% endhighlight %}
 
-A little riddle: Guess _n_ such that $$ fib(n) = 55 $$.
+A little quiz: Guess _n_ such that $$ fib(n) = 55 $$ (I have elaborated on this
+[tomorrow](/100-days-of-fibonacci-day-4-prolog/)).
 
 The code can as usually be found on GIT
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.scala)
