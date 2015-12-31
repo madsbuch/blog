@@ -7,17 +7,18 @@ comments: false
 
 So far I have used Haskell, a pure functional language, and C,
 an empiric systems language. In these languages I have implemented
-Fibonacci recursive, recursive with an accumulator, and iterative.
+the Fibonacci function recursively, recursively with an accumulator,
+and iteratively.
 There are still some basic techniques left, so today I will not
-introduce something radical language wise. Instead I take one of
+introduce something radical language-wise. Instead I will take one of
 the most widespread languages and implement Fibonacci by dynamic
 programming using memoization.
 
 # Day 2 - Java
-I have implemented Fibonacci in Java using dynamic programming. The
+Here I have implemented Fibonacci in Java using dynamic programming. The
 idea is to check whether the result has already been calculated. If
 it has so, then we return the already calculated the result, otherwise
-we calculate the result, save it, and return 
+we calculate the result, save it, and return.
 
 {% highlight java %}
 /**
@@ -41,9 +42,9 @@ private static BigInteger fibDynamic(int n, Hashtable<Integer, BigInteger> mem){
 }
 {% endhighlight %}
 
-To keep the type signature to that of the other functions, we build an 
+To keep the type signature to that of the other implementations, we build an 
 overloaded wrapper method, which initializes a hash table, runs the
-recursive function and return its result.
+recursive function and returns its result.
 
 {% highlight java %}
 /**
@@ -59,16 +60,17 @@ The code is as usual available and can be found
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.java). 
 
 # Fibonacci and Dynamic Programming
-Today I introduced dynamic programming. We have to ways to apply dynamic
+Today I introduced dynamic programming. We have two ways to apply dynamic
 programming, either by memoization or tabulation. Memoization is the process
 of remembering intermediate results. This is exactly what I did in the
-previous example. Here we might cache some results we never use.
-Tabulation is the process of precalculating a table of intermediate results
-and then afterwards aggregate the result.
+earlier example. Here we might cache some results we never use.
+Tabulation is the process of pre-calculating a table of intermediate results
+and then afterwards aggregate the result afterwards.
 
-Dynamic programming can also be seen as a method of reducing the stack
-size. In the example the stack will grow linear in _n_. Had we used
-the direct recursive method, it would have grown exponentially in _n_.
+Dynamic programming can also be seen as a method of reducing the number
+of unfolds. In this example the Fibonacci implementation is called linear
+number of times to _n_. In the direct recursive method, it would
+have been exponentially in _n_.
 
 # Java, Java, Java
 Java is one of the top languages used today. It is compiled to an
