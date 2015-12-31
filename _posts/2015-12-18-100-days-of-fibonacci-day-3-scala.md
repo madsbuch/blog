@@ -52,24 +52,25 @@ $ scala Fib
 {% endhighlight %}
 
 A little quiz: Guess _n_ such that $$ fib(n) = 55 $$ (I have elaborated on this
-[tomorrow](/100-days-of-fibonacci-day-4-prolog/)).
+[tomorrow](/blog/100-days-of-fibonacci-day-4-prolog/)).
 
 The code can as usually be found on GIT
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.scala)
 
 # Continuation Passing Style
-Continuation passing style is not easy to read, and such it is not a good way
+Continuation Passing Style is not easy to read, and as such it is not a
+good way
 to implement functions, unless there is a very good reason. These reasons
 can be applications where explicit management of the control flow is
 necessary.
 
 Many compilers do an implicit conversion from recursive functions to
-functions in CPS. The reason is that all computations are wrapped in a
+functions in CPS. A reason is that all computations are wrapped in a
 package (i.e. the _continuation_) and is put in the heap which reduces
 maximum stack size.
 
 # Conclusion
-Today I looked at 2 new things, Scala and continuation passing style.
+Today I looked at 2 new things, Scala and Continuation Passing style.
 
 Scala is a great language for writing functional code that has to
 integrate with Java projects, or for writing functional code using
