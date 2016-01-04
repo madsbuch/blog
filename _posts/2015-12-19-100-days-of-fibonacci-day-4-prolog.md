@@ -4,6 +4,8 @@ title: 100 Days of Fibonacci - Day 4, Prolog
 video: false
 comments: false
 ---
+This is an article in a series of articles. An overview of the entire
+project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 So far I have looked at functional and imperative languages. There are however
 many more programming paradigm. Todays language is one in which

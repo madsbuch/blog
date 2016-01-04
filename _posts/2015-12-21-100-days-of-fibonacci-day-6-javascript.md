@@ -5,6 +5,9 @@ video: false
 comments: false
 ---
 
+This is an article in a series of articles. An overview of the entire
+project can be found [here](/blog/100-days-of-fibonacci-overview/).
+
 Until now I have focused on Fibonacci as a function of some input.
 I have defined a function which returns a value when supplied an argument.
 This yield a batch processing paradigm. However the Fibonacci is defined as

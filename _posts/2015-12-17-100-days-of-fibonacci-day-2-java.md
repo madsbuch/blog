@@ -4,6 +4,8 @@ title: 100 Days of Fibonacci - Day 2, Java
 video: false
 comments: false
 ---
+This is an article in a series of articles. An overview of the entire
+project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 So far I have used Haskell, a pure functional language, and C,
 an empiric systems language. In these languages I have implemented

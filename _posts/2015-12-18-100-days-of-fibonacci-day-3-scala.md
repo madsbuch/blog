@@ -4,6 +4,8 @@ title: 100 Days of Fibonacci - Day 3, Scala
 video: false
 comments: false
 ---
+This is an article in a series of articles. An overview of the entire
+project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 Coming from yesterdays Java, Scala is a naturally the next step. It is
 a functional language compiled to run on the Java Virtual Machine.

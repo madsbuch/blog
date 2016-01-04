@@ -4,6 +4,8 @@ title: 100 Days of Fibonacci - Day 5, Spreadsheet
 video: false
 comments: false
 ---
+This is an article in a series of articles. An overview of the entire
+project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 Over the course of this project small intermedios will occur.
 Today is one of these. The past days I implemented Fibonacci
