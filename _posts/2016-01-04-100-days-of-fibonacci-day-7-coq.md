@@ -13,6 +13,17 @@ of the Fibonacci function indeed is equivalent. Concretely I have chosen
 the direct recursive and the accumulated recursive implementations as
 the subject.
 
+These implementation are the same
+as in [the first article](/blog/100-days-of-fibonacci-day-0-haskell/).
+This is done deliberatly as they are idiomatic to functional programming.
+Furthermore they showcase quite well why this has a value. The directly
+recursive implementation is easy to understand and stays close to both
+the definition of Fibonacci and the common understanding of the function.
+On the other hand the recursive function with the accumulator is harder
+to understand, but provides a significant speedup. In this article I show 
+that the rest of the program can be indifferent to which implementation is
+in use.
+
 Furthermore I have made an post to
 [summarize my whole process](/blog/100-days-of-fibonacci-overview/).
 
@@ -187,4 +198,26 @@ Proof.
 Qed.
 {% endhighlight %}
 
+The signature of `there_is_only_one_fib` was given above. We
+specialize it with the arguments so we can rewrite our goal.
+The goal is then rewritten with `forall n, fib_acc n = fib_direct n`.
+This yields a goal which is trivially true. Namely
+`fib_direct n = fib_direct n`.
+
+We are now sure that for any _n_ we can provide to the directly recursive
+implementation of Fibonacci, the other implementation yields the same
+result.
+
 # Conclusion
+In this post I implemented the Fibonacci function in the same way
+as in the first article.
+These are idiomatic to functional programming and as such it makes sense
+to keep using them here.
+
+They key concept introduced here is the notion of proving propositions.
+I proved that the two implementations indeed behave identicly. We have
+scratched in the surface when it comes to the underlying theory. But
+already saw the fruits of the efforts: The direct implementation is slow
+but easy to understand. The other implementation is faster but slightly more
+complicated. We have used this to prove that they _always_ return the same
+value for the same input.
