@@ -28,21 +28,23 @@ Following are the different languages used so far and
 a little note on what concept was showcased.
 
 1. [Haskell](http://buchi.dk/blog/100-days-of-fibonacci-day-0-haskell/):
-   This post introduces __direct recursion__ and accumulated
-   recursion in Haskell.
+   This post introduces __direct recursion__ and __accumulated recursion__
+   in Haskell.
 2. [C](http://buchi.dk/blog/100-days-of-fibonacci-day-1-c/):
    C as an imperative language is introduced, and Fibonacci was implemented
-   in an __iterative__ style.
+   in an __iterative style__.
 3. [Java](http://buchi.dk/blog/100-days-of-fibonacci-day-2-java/):
-   Dynamic Programming
+   The Fibonacci function is here implmented by means of
+   __dynamic programming__.
 4. [Scala](http://buchi.dk/blog/100-days-of-fibonacci-day-3-scala/):
-   Continuation Passing style
+   Scala is the language, __Continuation Passing style__ is the concept.
 5. [Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/):
-   Logic programming, first introduction to problem modeling
-   through ADT
-6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/): Abstraction of the concept of programming.
+   Fibonacci is here implemented in logicl programming. Furthermore we use
+   ADTs to derive the argument to the function.
+6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/): The key idead is to abstract the concept og programming to include more
+  than written text.
 7. [JavaScript](http://buchi.dk/blog/100-days-of-fibonacci-day-6-javascript/):
-   Introducing the concept of events in JavaScript. This is a base for
+   Introducing the concept of __events__ in JavaScript. This is a base for
    the concepts of streams, signals, etc. which are introduced later on.
 8. [Coq](/blog/100-days-of-fibonacci-day-7-coq/):
-   Introduction of proving using a programming language.
+   Introduction of __theorem proving__ using a programming language.
