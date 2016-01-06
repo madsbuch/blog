@@ -25,7 +25,7 @@ to understand but provides a significant speedup. In this article, I show
 that the rest of the program can be indifferent to which implementation is
 in use.
 
-Furthermore, I have made a post to
+Furthermore, I made a post to
 [summarize my whole process](/blog/100-days-of-fibonacci-overview/).
 
 # Day 7 - Coq!
