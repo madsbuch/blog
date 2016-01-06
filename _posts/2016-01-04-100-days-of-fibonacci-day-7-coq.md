@@ -7,11 +7,12 @@ comments: false
 
 I have now had a couple of days of. It has been Christmas and New Year.
 But now it is time to start again and look at another language. Today
-I chose Coq. And I decided to introduce the concept of proving. The
-key idea in this post is to prove that two different implementations
-of the Fibonacci function indeed is equivalent. Concretely I have chosen
+I chose Coq. And I decided to look at proving some properties about
+programs. The key idea in this post is to prove that two
+different implementations
+of the Fibonacci function indeed are equivalent. Concretely I have chosen
 the direct recursive and the accumulated recursive implementations as
-the subject.
+the subjects.
 
 These implementations are the same
 as in [the first article](/blog/100-days-of-fibonacci-day-0-haskell/).
