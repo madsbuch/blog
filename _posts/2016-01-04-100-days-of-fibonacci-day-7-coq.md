@@ -13,18 +13,18 @@ of the Fibonacci function indeed is equivalent. Concretely I have chosen
 the direct recursive and the accumulated recursive implementations as
 the subject.
 
-These implementation are the same
+These implementations are the same
 as in [the first article](/blog/100-days-of-fibonacci-day-0-haskell/).
-This is done deliberatly as they are idiomatic to functional programming.
-Furthermore they showcase quite well why this has a value. The directly
+This is done deliberately as they are idiomatic to functional programming.
+Furthermore, they showcase quite well why this has a value. The directly
 recursive implementation is easy to understand and stays close to both
 the definition of Fibonacci and the common understanding of the function.
-On the other hand the recursive function with the accumulator is harder
-to understand, but provides a significant speedup. In this article I show 
+On the other hand, the recursive function with the accumulator is harder
+to understand but provides a significant speedup. In this article, I show 
 that the rest of the program can be indifferent to which implementation is
 in use.
 
-Furthermore I have made an post to
+Furthermore, I have made a post to
 [summarize my whole process](/blog/100-days-of-fibonacci-overview/).
 
 # Day 7 - Coq!
@@ -68,15 +68,15 @@ Compute fib_acc 10.
 {% endhighlight %}
 
 A couple of things look a bit different. The function signature looks
-kind of weird. Furthermore we are doing some kind of match stuff with
+kind of weird. Furthermore, we are doing some kind of match stuff with
 something that looks a bit like numbers.
 
-In the function signature we use the `Fixpoint` to denote a recursive
-function. This is because Coq encode recursion in its type theory and
+In the function signature, we use the `Fixpoint` to denote a recursive
+function. This is because Coq encodes recursion in its type theory and
 implement what's called iso-recursion.
 
-For integers Coq does not use the regular atomic data types we know from
-ex. Java. Instead it has (and only has) inductive data types. In these
+For integers, Coq does not use the regular atomic data types we know from
+ex. Java. Instead, it has (and only has) inductive data types. In these
 [Peano naturals](https://en.wikipedia.org/wiki/Peano_axioms) has
 been implemented. This means that zero is represented as `O`, one
 as `S O`, two as `S (S O)` and so forth (this does not implement integers
@@ -88,20 +88,20 @@ internal representation. Hence
 This is the same representation I
 [implemented in Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/) earlier on.
 
-As usual the code is available on [Github](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.v)).
+As usual, the code is available on [Github](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.v)).
 
-It is necessary to be able to reduce data to atomic peaces to do the proving
+It is necessary to be able to reduce data to atomic pieces to do the proving
 we want to do. This is to create a total dependency between the type and its
-value. Imagine Java's `int` type. This type holds at least $2^{32}$ different
-values without the compiler knowing which. In that case it is not possible to
+value. Imagine Java's `int` type. This type holds, at least, $2^{32}$ different
+values without the compiler knowing which. In that case, it is not possible to
 reason about the return value of a function, which we need for the next
 section.
 
 # Coq - proof assistant
-Coq is not meant as a general purpose programming language. In fact it is
+Coq is not meant as a general-purpose programming language. In fact, it is
 a proof assistant. This means that it is not possible to interact with
 the surrounding world. It is not possible to read command line arguments or
-invoke system calls. On the other hand Coq can prove properties.
+invoke system calls. On the other hand, Coq can prove properties.
 
 In the above we had two different implementations of the Fibonacci
 function. One might wonder whether these functions always return the same
@@ -124,7 +124,7 @@ Definition specification_of_fibonacci (f : nat -> nat) :=
     f (S (S n)) = f (S n) + f n.
 {% endhighlight %}
 
-This is in fact a proposition. Is is _true_ if we have a function that behaves
+This is, in fact, a proposition. Is is _true_ if we have a function that behaves
 as the specification. This specification is very close to the directly 
 recursive implementation.
 
@@ -159,13 +159,13 @@ What happens above is that we specify a lemma. Given two functions, that
 both satisfies the specification of the Fibonacci function, they yield the
 same result for all values of _n_.
 
-After the specification of the lemma we provide an actual proof. this is a
+After the specification of the lemma, we provide an actual proof. this is a
 series of commands that generates a function which in turn satisfies the _type_
 of the lemma. This process is somewhat out of scope, and I will look into this
 in another post.
 
-After this all we need to do is to prove that both the implementations indeed
-satisfies th specification. Hereafter we can use the property that there is
+After this, all we need to do is to prove that both the implementations indeed
+satisfies the specification. Hereafter we can use the property that there is
 only one Fibonacci function to prove the equivalence.
 
 {% highlight coq %}
@@ -209,14 +209,14 @@ implementation of Fibonacci, the other implementation yields the same
 result.
 
 # Conclusion
-In this post I implemented the Fibonacci function in the same way
+In this post, I implemented the Fibonacci function in the same way
 as in the first article.
 These are idiomatic to functional programming and as such it makes sense
 to keep using them here.
 
 They key concept introduced here is the notion of proving propositions.
-I proved that the two implementations indeed behave identicly. We have
-scratched in the surface when it comes to the underlying theory. But
+I proved that the two implementations indeed behave identically. We have
+scratched the surface when it comes to the underlying theory. But
 already saw the fruits of the efforts: The direct implementation is slow
 but easy to understand. The other implementation is faster but slightly more
 complicated. We have used this to prove that they _always_ return the same
