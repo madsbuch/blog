@@ -5,15 +5,16 @@ video: false
 comments: false
 ---
 
-A couple of weeks ago I started this project. The idea is to program
-in as many languages as possible and explore various concepts of
-programming. I chose Fibonacci as my subject for this exploration.
-It is a good function because it is simple to understand yet complicated
+A couple of weeks ago I started this project. The idea was to program
+the Fibonacci function in as many languages as possible
+and explore various concepts of
+programming. I chose Fibonacci as my subject for this exploration as
+it is a good function that is is simple to understand yet complicated
 enough to show different programming techniques (unlike he _hello world_
 example one would usually go for).
 
 # Idea
-The idea behind this project is manyfold:
+The idea behind this project is manifold:
 
 * Explore various styles of programming.
 * Take small concepts and elaborate on these using a simple
@@ -24,7 +25,7 @@ But first of all it is intended to just be a little side project
 for killing a bit of time.
 
 # Languages
-Following are the different languages used so far and
+The following are the different languages used so far and
 a little note on what concept was showcased.
 
 1. [Haskell](http://buchi.dk/blog/100-days-of-fibonacci-day-0-haskell/):
@@ -34,17 +35,22 @@ a little note on what concept was showcased.
    C as an imperative language is introduced, and Fibonacci was implemented
    in an __iterative style__.
 3. [Java](http://buchi.dk/blog/100-days-of-fibonacci-day-2-java/):
-   The Fibonacci function is here implmented by means of
+   The Fibonacci function is here implemented by means of
    __dynamic programming__.
 4. [Scala](http://buchi.dk/blog/100-days-of-fibonacci-day-3-scala/):
    Scala is the language, __Continuation Passing style__ is the concept.
 5. [Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/):
-   Fibonacci is here implemented in logicl programming. Furthermore we use
+   Fibonacci is here implemented in logic programming. Furthermore we use
    ADTs to derive the argument to the function.
-6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/): The key idead is to abstract the concept og programming to include more
+6. [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/): The key idea is to abstract the concept of programming to include more
   than written text.
 7. [JavaScript](http://buchi.dk/blog/100-days-of-fibonacci-day-6-javascript/):
    Introducing the concept of __events__ in JavaScript. This is a base for
-   the concepts of streams, signals, etc. which are introduced later on.
+   the concepts of streams, signals, etc. which will be introduced later on.
 8. [Coq](/blog/100-days-of-fibonacci-day-7-coq/):
    Introduction of __theorem proving__ using a programming language.
+
+From here it is just following along. This project will stay current
+quite some time while we explore the idiosyncrasies of programming
+languages.
+
