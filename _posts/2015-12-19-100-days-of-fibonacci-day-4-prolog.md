@@ -8,21 +8,21 @@ This is an article in a series of articles. An overview of the entire
 project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 So far I have looked at functional and imperative languages. There are however
-many more programming paradigm. Todays language is one in which
+many more programming paradigms. Today's language is one in which
 we do not initially exploit idiomatically. Prolog is heavily used in
 artificial intelligence industry and research. This is due to
 the flexibility of the language and the natural way of formulating
 computations in terms of predicates. Prolog allows us to derive
 the arguments of these predicates.
 
-In this blog post i show how to implement Fibonacci in the directly
+In this blog post, i show how to implement Fibonacci in the directly
 recursive style. As we will see this gives problems when we want to
 exploit some Prolog features.
 
 # Day 4 - Prolog
-In Prolog I defined a predicate that holds both the argument and the
+In Prolog, I defined a predicate that holds both the argument and the
 result. A predicate is something that can only be true or false.
-Therefore the notion of return values are explicit parameters to the
+Therefore, the notion of return value is explicit parameters to the
 predicates in Prolog.
 
 {% highlight prolog %}
@@ -37,8 +37,8 @@ fib_direct(N, R) :-
     R is A + B.
 {% endhighlight %}
 
-In above the base cases are defined as simple predicates. The first
-argument is the n'th Fibonacci number and the second is the result.
+In above the base cases are defined as simple predicates. The first argument
+is the nth Fibonacci number and the second is the result.
 
 By writing `fib_direct(0, 0).` we denote that the predicate predicate
 `fib_direct` is true when applied 0 for both arguments. In `swipl`
@@ -69,8 +69,7 @@ R = 55 .
 A problem here is that we use the `is/2` notation. It enforces evaluation
 of the right side and puts the result in the variable on the left side.
 This is something we want to avoid in logical programming, as we need the
-right side to be defined. The reason is that we can not choose what to derive
-anymore.
+right side to be defined. The reason is that we can not choose what to derive anymore.
 
 Yesterday I put up a little challenge to try to figure out where 55 came from.
 This challenge is ideal to solve in Prolog as we can use the
@@ -147,12 +146,12 @@ The file can be downloaded
 Logic programming has its core in predicates. We define logical
 propositions and make the subsystem derive what we need. This works
 very well when we work on structures like lists and trees. The Fibonacci
-function, however, works on natural numbers which we usually represent
-through integers for direct translation to machine instructions.
+function, however, works on natural numbers which we usually represent as
+integers for direct translation to machine instructions.
 However, as I showed, naturals are indeed structural when using the Peano
 axioms.
 
-Actually all problems may be expressed in structures. This we will
+Actually, all problems may be expressed in structures. This we will
 get back to when discussing theorem provers.
 
 # Conclusion
@@ -160,6 +159,6 @@ Today I looked at Prolog. I implemented the Fibonacci function
 in a logic context. We saw that We didn't exploit Prologs ability
 to derive the argument to Fibonacci. To circumvent that, I
 built a structural implementation of natural, using Peano,
-so we didn't have to make explicit evaluation. This implementation
+so we didn't have to make an explicit evaluation. This implementation
 had the ability to derive what number a given Fibonacci number is,
 even though it is not practical.
