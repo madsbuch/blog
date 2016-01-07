@@ -10,15 +10,15 @@ project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
 Until now I have focused on Fibonacci as a function of some input.
 I have defined a function which returns a value when supplied an argument.
-This yield a batch processing paradigm. However the Fibonacci is defined as
+This yield a batch processing paradigm. However, the Fibonacci is defined as
 a series, and as such it makes sense to treat it as a series.
 
-In this blog post I am going to treat Fibonacci as an unlimited stream of
-numbers. To carry out this idea I am going to use JavaScript. The reason
-for this is that JavaScript is a well known programming language and
+In this blog post, I am going to treat Fibonacci as an unlimited stream of
+numbers. To carry out this idea, I am going to use JavaScript. The reason
+for this is that JavaScript is a well-known programming language and
 because their event system is easy to understand. Later I will expand
 the notion to other languages where the concept is known as streams,
-signals, co-inductive data structures, etc.
+signals, coinductive data structures, etc.
 
 # Day 6 - JavaScript
 The core JavaScript implementation is like the iterative implementation
@@ -71,7 +71,7 @@ $ node fib.js
 ...................................................................................................
 {% endhighlight %}
 
-As usual the code is available
+As usual, the code is available
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.js).
 
 # JavaScript and Event Driven Programming
@@ -93,7 +93,7 @@ events.
 This approach has been in use for a long time. But has certain disadvantages
 when working on large systems. It quickly becomes messy when too many events
 are to be handled and dispatched. But certain solutions already do exists.
-Later on we will take a look at Elm, Here we model the complete application
+Later on, we will take a look at Elm, Here we model the complete application
 and let the system handle what part of the web page is updated. And don't
 matter. It is fast.
 

@@ -7,13 +7,13 @@ comments: false
 This is an article in a series of articles. An overview of the entire
 project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
-Over the course of this project small intermedios will occur.
+Over the course of this project, small intermedios will occur.
 Today is one of these. The past days I implemented Fibonacci
 in what is considered "tradition" programming languages. They
 have a formal syntax based on a grammar and an alphabet.
 
 Today I am presenting Fibonacci through a tool that many people
-use on a daily basis. Also people who does not come out of a
+use on a daily basis. Also, people who do not come out of a
 computer science / engineering world.
 
 # Day 5 - Spreadsheet
@@ -29,12 +29,12 @@ The column left to the Fibonacci column is the index of the corresponding
 Fibonacci number.
 
 I have written that this method is dynamic programming using tabulation.
-The reason for this is that i assume this being a pre-calculated table of
+The reason for this is that I assume this being a pre-calculated table of
 Fibonacci numbers. When one has this table she can quickly look up the number
 she needs for further calculation. There might be other classifications
 of this technique using other reasons.
 
-As usual the file is in my Fibonacci snippet folder and can be found
+As usual, the file is in my Fibonacci snippet folder and can be found
 [here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.ods).
 
 # Spreadsheets as Programs
