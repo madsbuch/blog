@@ -4,16 +4,17 @@ title: 100 Days of Fibonacci - Day 4, Prolog
 video: false
 comments: false
 ---
-This is an article in a series of articles. An overview of the entire
-project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
-So far I have looked at functional and imperative languages. There are however
-many more programming paradigms. Today's language is one in which
-we do not initially exploit idiomatically. Prolog is heavily used in
-artificial intelligence industry and research. This is due to
-the flexibility of the language and the natural way of formulating
-computations in terms of predicates. Prolog allows us to derive
-the arguments of these predicates.
+In my [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
+I looked at functional and imperative language. There are however
+many more programming paradigms today we are going to dive into
+one of the most used
+[logic programming languages](https://en.wikipedia.org/wiki/Logic_programming).
+
+Prolog is heavily used in the field of artificial intelligence. This is due
+to the natural way of formulating computations in terms of predicates.
+This allows for concise expression of tree structures that certain data might
+exhibit.
 
 In this blog post, i show how to implement Fibonacci in the directly
 recursive style. As we will see this gives problems when we want to
