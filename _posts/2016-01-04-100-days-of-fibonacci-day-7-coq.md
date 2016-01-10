@@ -31,11 +31,11 @@ in favor the strongest guarantee we can have for the property, a mathematical
 proof.
 
 # Day 7 - Coq!
-Today I did two implementations of the Fibonacci function in Coq. It is
-the directly recursive and the recursive with accumulation. These are both
-implementations we have seen before. But we use them again as they provide
-a good body for showcasing proving program equivalence. Next we have the two
-implementations.
+As mentioned the two implementations are the directly recursive and
+the recursive with accumulation. These are both implementations we have
+[seen before](http://buchi.dk/blog/100-days-of-fibonacci-day-0-haskell/).
+But we use them again as they provide a good body for
+showcasing proving program equivalence. Next we have the two implementations.
 
 {% highlight coq %}
 Fixpoint fib_direct (n : nat) : nat :=
