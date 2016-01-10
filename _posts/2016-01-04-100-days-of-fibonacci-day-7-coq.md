@@ -5,14 +5,15 @@ video: false
 comments: false
 ---
 
-I have now had a couple of days of. It has been Christmas and New Year.
-But now it is time to start again and look at another language. Today
-I chose Coq. And I decided to look at proving some properties about
-programs. The key idea in this post is to prove that two
-different implementations
-of the Fibonacci function indeed are equivalent. Concretely I have chosen
-the direct recursive and the accumulated recursive implementations as
-the subjects.
+I have been of a couple of days over the Christmas and New Year.
+But now it is time to start my [100 days of Fibonacci](http://buchi.dk/blog/100-days-of-fibonacci-overview/)
+project again.
+
+Today I chose Coq and I decided to look at proving properties about
+programs. The key idea in this post is to prove that two different
+implementations of the Fibonacci function indeed are equivalent.
+Concretely I have chosen the direct recursive and the accumulated
+recursive implementations as the subjects.
 
 These implementations are the same
 as in [the first article](/blog/100-days-of-fibonacci-day-0-haskell/).
@@ -21,12 +22,13 @@ Furthermore, they showcase quite well why this has a value. The directly
 recursive implementation is easy to understand and stays close to both
 the definition of Fibonacci and the common understanding of the function.
 On the other hand, the recursive function with the accumulator is harder
-to understand but provides a significant speedup. In this article, I show 
-that the rest of the program can be indifferent to which implementation is
-in use.
+to understand but provides a significant speedup.
 
-Furthermore, I made a post to
-[summarize my whole process](/blog/100-days-of-fibonacci-overview/).
+In this article, I show that the rest of the program can be indifferent
+to which implementation is in use. This is done buy proving theorems, which
+is considerably more time consuming that providing tests. The effort returns
+in favor the strongest guarantee we can have for the property, a mathematical
+proof.
 
 # Day 7 - Coq!
 Today I did two implementations of the Fibonacci function in Coq. It is
