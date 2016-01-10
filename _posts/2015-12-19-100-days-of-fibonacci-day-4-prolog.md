@@ -6,7 +6,7 @@ comments: false
 ---
 
 In my [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
-I looked at functional and imperative language. There are however
+project I looked at functional and imperative language. There are however
 many more programming paradigms today we are going to dive into
 one of the most used
 [logic programming languages](https://en.wikipedia.org/wiki/Logic_programming).
