@@ -50,7 +50,7 @@ the concept showcased.
 8. [Coq](/blog/100-days-of-fibonacci-day-7-coq/):
    The introduction of __theorem proving__ using a programming language.
 9. [R](/blog/100-days-of-fibonacci-day-8-r/): Using R to plot the
-   relationship between $n$ and $fib(n)$.
+   relationship between $$n$$ and $$fib(n)$$.
 
 From here it is just following along. This project will stay current
 quite some time while we explore the idiosyncrasies of programming
