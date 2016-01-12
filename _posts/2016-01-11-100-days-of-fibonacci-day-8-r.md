@@ -82,7 +82,7 @@ number is `354224848179261915075`.
 
 The type conversion does not matter when visualizing. It won't even mean a
 pixel when plotted on the screen, so we will continue on and try to visualize
-the relationship between $n$ and $fib(n)$.
+the relationship between $$n$$ and $$fib(n)$$.
 
 ![100 first Fibonacci numbers.](/blog/media/2016-01-11-100-days-of-fibonacci-day-8-r/fib.png)
 
@@ -94,6 +94,6 @@ I implemented the recursive edition of the Fibonacci algorithm in R. This
 algorithm is efficient, and R provides efficient subroutines for handling
 the array.
 
-After the implementation a simple plot of the relationship between $n$ and
-$fib(n)$ was plotted. This was easily done in R, as R provides good 
+After the implementation a simple plot of the relationship between $$n$$ and
+$$fib(n)$$ was plotted. This was easily done in R, as R provides good 
 abstractions for this.
