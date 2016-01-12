@@ -25,7 +25,7 @@ On the other hand, the recursive function with the accumulator is harder
 to understand but provides a significant speedup.
 
 In this article, I show that the rest of the program can be indifferent
-to which implementation is in use. This is done buy proving theorems, which
+to which implementation is in use. This is done by proving theorems, which
 is considerably more time consuming that providing tests. The effort returns
 in favor the strongest guarantee we can have for the property, a mathematical
 proof.
@@ -75,7 +75,7 @@ kind of weird. Furthermore, we are doing some kind of match stuff with
 something that looks a bit like numbers.
 
 In the function signature, we use the `Fixpoint` to denote a recursive
-function. This is because Coq encodes recursion in its type theory and
+function. This is because Coq encodes recursion in its type and
 implement what's called iso-recursion.
 
 For integers, Coq does not use the regular atomic data types we know from
@@ -83,7 +83,7 @@ ex. Java. Instead, it has (and only has) inductive data types. In these
 [Peano naturals](https://en.wikipedia.org/wiki/Peano_axioms) has
 been implemented. This means that zero is represented as `O`, one
 as `S O`, two as `S (S O)` and so forth (this does not implement integers
-bu only naturals, but for Fibonacci this is just fine).
+btu only naturals which is just fine for Fibonacci).
 
 Coq automatically expands syntactic decimal numbers to its
 internal representation. Hence
