@@ -5,8 +5,10 @@ video: false
 comments: false
 ---
 
-Yesterday I implemented the directly recursive and the tail recursive Fibonacci
-algorithms in Haskell. Today I decided to take one of the most widely known
+My [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/) challenge
+started yesterday where I implemented the function directly recursive
+and using accumulated recursion in Haskell.
+Today I decided to take one of the most widely known
 languages and implement of iterative edition of the Fibonacci function.
 
 # Day 1 - C
@@ -26,17 +28,17 @@ unsigned long fib_iterative(long n){
 }
 {% endhighlight %}
 
-Overflows are something one needs to be careful about in C. C provides
-very little abstraction compared to yesterdays language Haskell. In
-Haskell we used a data type which supports unlimited integer values.
-This means that the compiler links the code to a library that provides
-a string representation of integers, along with operations for working
-on integer strings.
-This library can also be implemented in C, but it is out of scope for
-the project.
+Overflows needs to be carefully thought about in C. The language
+provides very little support for unlimited integers compared to
+yesterdays language, Haskell, which indeed had support for big integers.
+
+Haskell supports large integers by using a library which uses strings
+for representing integers along with implementations of arithmetic
+functions for working on these integers. This could also have been
+implemented in C. However, this is out of scope for this article.
 
 The full code for Fibonacci in C is available 
-[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.c).
+[on Github](https://github.com/madsbuch/fibonacci/tree/master/c).
 Be aware that the code might change when I feel for implementing other
 algorithms in C.
 
