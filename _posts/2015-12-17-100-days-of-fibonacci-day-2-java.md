@@ -4,17 +4,17 @@ title: 100 Days of Fibonacci - Day 2, Java
 video: false
 comments: false
 ---
-This is an article in a series of articles. An overview of the entire
-project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
-So far I have used Haskell, a pure functional language, and C,
-an empiric systems language. In these languages I have implemented
-the Fibonacci function recursively, recursively with an accumulator,
-and iteratively.
-There are still some basic techniques left, so today I will not
-introduce something radical language-wise. Instead I will take one of
-the most widespread languages and implement Fibonacci by dynamic
-programming using memoization.
+In my [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
+project I have now shown three idioms for implementing algorithms:
+Direct recursion, accumulated recursion, and an iterative
+approach. Today I diving into a technique for optimizing
+function with many repetitive calls.
+
+Memoization can be added to an already implemented function. When
+used correctly is provides a radical speedup for a little extra
+memory consumption. This I have showcased in Java on the directly
+recursive Fibonacci implementation.
 
 # Day 2 - Java
 Here I have implemented Fibonacci in Java using dynamic programming. The
@@ -59,7 +59,7 @@ private static BigInteger fibDynamic(int n){
 {% endhighlight %}
 
 The code is as usual available and can be found
-[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.java). 
+on [Github](https://github.com/madsbuch/fibonacci/tree/master/java). 
 
 # Fibonacci and Dynamic Programming
 Today I introduced dynamic programming. We have two ways to apply dynamic
