@@ -15,20 +15,22 @@ Later on I worked with my friend
 [Anders Schmidt](http://www.andersschmidt.com/) who showed me 
 Paul Flavius Nechita's [100 Days UI Challenge](http://www.100daysui.com/).
 I thought it was cool and wanted to do something similar. But
-I do not design. So I decided to do it with Fibonacci
-in 100 different programming languages. The idea is to showcase
-some typical aspects of a programming language and implement the
-function in the different languages idiomatic ways.
+I do not design.
 
-Today is the first day of this project. I am going to present Fibonacci
-in Haskell. The formulations of the function is going to be by direct
-recursion and recursion with accumulation.
+So I decided to [program Fibonacci in 100 different programming languages](/blog/100-days-of-fibonacci-overview/).
+The idea is to showcase some typical aspects of a programming
+language and implement the function in the different languages idiomatic ways.
+
+As today is the first day of this project I am going to present Fibonacci
+in Haskell. This is mostly because I recently have spend quite some time
+with that language. The formulations of the function is going to be
+by direct recursion and recursion with accumulation.
 
 # Day 0 - Haskell!
 Where else would you start? Here we look at Haskell as a practical
 general purpose language.
 
-In Haskell I have done two different implementations. First, the
+In Haskell I did two different implementations. First, the
 recursive way, which is the way we usually think of problems in
 a functional context. We use pattern matching to pick out the
 base and induction cases.
@@ -99,7 +101,7 @@ $ ./fib 10
 {% endhighlight %}
 
 The file is available for download
-[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.hs). 
+[here](https://github.com/madsbuch/fibonacci/tree/master/haskell). 
 
 # Functional Fibonacci
 In this first implementation we used two techniques for implementing
