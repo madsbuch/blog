@@ -5,6 +5,11 @@ video: false
 comments: false
 ---
 
+__Updates:__
+
+* 26 January 2016: Complete rewrite of the section about the Structural
+  Implementation of Fibonacci.
+
 In my [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
 project I looked at functional and imperative language. There are however
 many more programming paradigms today we are going to dive into
@@ -83,74 +88,141 @@ ERROR: fib_direct/2: Arguments are not sufficiently instantiated
 {% endhighlight %}
 
 But as you can see it fails. This is because of the use of `is/2`.
+The `is`-operator does explicit evaluation of the right-hand side
+before it check whether it equals the left-hand side.
+
+## A Structural Implementation of Fibonacci
 
 To remove the use of that operator I have implemented Peano natural
 numbers and defined what addition is. This allows us to implement
 Fibonacci in a purely structural manner.
 
-{% highlight prolog %}
+Fibonacci is a very simple function that requires 3 constructions:
+a data type (natural numbers), data aggregation (addition), and
+a way to define the recursive dependencies. That last thing is done
+through recursively defined predicates in Prolog.
+
+{% highlight bash %}
 % Definiition of the Peano numbers
 nat(0).
 nat(s(_)).
 
 % Readable nats
-read_nat(0, 0).
-read_nat(s(N), R) :-
-    read_nat(N, R1),
+nat_to_int(0, 0).
+nat_to_int(s(N), R) :-
+    nat_to_int(N, R1),
     R is R1 + 1.
 
+int_to_nat(0, 0).
+int_to_nat(X, s(R)) :-
+    X1 is X-1,
+    int_to_nat(X1, R).
+{% endhighlight %}
+
+Above is the data type. The first three lines are somewhat unnecessary
+as Prologs typing discipline is implicit.
+
+The next two block display how we convert between the arithmetic integers
+and the naturals. We use pattern matching an a recursively defined predicate.
+This construction is quite idiomatic for this problem.
+
+Net we have an implementation of addition. Again we use pattern
+matching in two defined predicates. The first predicate is the
+base case while the second is the induction case.
+
+{% highlight bash %}
 % Definition of addition ( add(A, B, Result ))
 add(0, B, B).
 add(s(A), B, R) :- add(A, s(B), R).
-    
+{% endhighlight %}
+
+To understand what is happening one can think of two stacks of plates
+where we move all plates piecewise from the left stack to the right.
+When the left stack is empty, we stop and let the right one be the
+result.
+
+The last part in this implementation is the definition of Fibonacci.
+Note that we implicitly subtract the number by 2 when we match in
+the induction case. This is necessary as we don't have any functionality
+for subtracting. General subtraction is not necessary as we only need to
+subtract by 2. In the body of the predicate we add by 1, to get the subtraction
+of 1.
+
+{% highlight bash %}
 fib_peano(0, 0).
 fib_peano(s(0), s(0)).
 fib_peano(s(s(N)), R) :-
     fib_peano(N, A),
     fib_peano(s(N), B),
     add(A, B, R).
+
+% Wrapper functions dealing with all the conversions
+fib_peano_wrapper_get_res(A, B) :-
+    int_to_nat(A, X),
+    fib_peano(X, Y),
+    nat_to_int(Y, B).
+fib_peano_wrapper_get_arg(A, B) :-
+    int_to_nat(B, Y),
+    fib_peano(X, Y),
+    nat_to_int(X, A).
 {% endhighlight %}
 
-And we don't need to use explicit evaluation.
+The two last blocks are for reading arithmetic arguments. They simply
+convert a number to the Peano structure before it run the `fib_peano`
+predicate. Lastly it converts back to arithmetic integers to make it
+easier to read the output.
+
+First we take a look at how it would look without conversion from integers.
+It is apparent that it is rather cumbersome to practically work with numbers
+in this format.
 
 {% highlight bash %}
-?- fib_peano(s(s(s(s(s(s(s(s(s(s(0)))))))))), R), read_nat(R, X).
+?- fib_peano(s(s(s(s(s(s(s(s(s(s(0)))))))))), R), nat_to_int(R, X).
 R = s(s(s(s(s(s(s(s(s(s(...)))))))))),
 X = 55 .
 {% endhighlight %}
 
-Note the `read_nat`. This is simply to make it readable.
-
-We can put a number in on the result side, and make Prolog
-derive from where is came (I am not using 55, but a smaller number, 5)
+The last piece of code for this post demonstrates how the wrappers work.
+the first example simply returns the 10th Fibonacci number.
+The second example is more interesting. It lets us derive which
+index the Fibonacci number 55 has.
 
 {% highlight bash %}
-?- fib_peano(N, s(s(s(s(s(0)))))), read_nat(N, X).
-N = s(s(s(s(s(0))))),
-X = 5 .
+?- fib_peano_wrapper_get_res(10, B).
+B = 55 .
+
+?- fib_peano_wrapper_get_arg(A, 55).
+A = 10 .
 {% endhighlight %}
 
-And the result is indeed correct. If we provide a number that
-either is not in the Fibonacci series or a large number (55 was too
-large for me) Prolog will run for a long time and eventually
-overflow the stack.
+The last piece of code also solves the puzzle from 
+[yesterday](http://buchi.dk/blog/100-days-of-fibonacci-day-3-scala/)
+where I asked what _n_ is for $$fib(n) = 55$$.
 
 The time and space complexity is generally not good when using this
-representation. It is usually only used when reasoning about programs
-(i.e. proving different properties about programs). This makes these
-example practically unusable.
+representation. It is usually only used when reasoning about programs, 
+i.e. proving different properties about programs. The idea about
+structuring problems in terms of nothing but predicates is very
+usable, and is indeed one of the reasons why Prolog is widely used.
 
-The file can be downloaded
-[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.pl).
+As usual the files are available on
+[Github](https://github.com/madsbuch/fibonacci/tree/master/prolog).
 
 # Programming Through Predicates
 Logic programming has its core in predicates. We define logical
 propositions and make the subsystem derive what we need. This works
-very well when we work on structures like lists and trees. The Fibonacci
-function, however, works on natural numbers which we usually represent as
-integers for direct translation to machine instructions.
-However, as I showed, naturals are indeed structural when using the Peano
-axioms.
+very well when we work on structures like lists and trees.
+
+The Fibonacci function, however, works on natural numbers which
+we usually represent as integers for direct translation to
+machine instructions.
+
+As seen above it was indeed possible to implement naturals structurally.
+On a more general note, it is actually possible to model all problems in
+a structural manner. This is exploited in amongst other languages
+[Coq](http://buchi.dk/blog/100-days-of-fibonacci-day-7-coq/).
+
+
 
 Actually, all problems may be expressed in structures. This we will
 get back to when discussing theorem provers.
