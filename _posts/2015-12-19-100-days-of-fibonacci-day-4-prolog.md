@@ -102,7 +102,7 @@ a data type (natural numbers), data aggregation (addition), and
 a way to define the recursive dependencies. That last thing is done
 through recursively defined predicates in Prolog.
 
-{% highlight bash %}
+{% highlight prolog %}
 % Definiition of the Peano numbers
 nat(0).
 nat(s(_)).
@@ -130,7 +130,7 @@ Net we have an implementation of addition. Again we use pattern
 matching in two defined predicates. The first predicate is the
 base case while the second is the induction case.
 
-{% highlight bash %}
+{% highlight prolog %}
 % Definition of addition ( add(A, B, Result ))
 add(0, B, B).
 add(s(A), B, R) :- add(A, s(B), R).
@@ -148,7 +148,7 @@ for subtracting. General subtraction is not necessary as we only need to
 subtract by 2. In the body of the predicate we add by 1, to get the subtraction
 of 1.
 
-{% highlight bash %}
+{% highlight prolog %}
 fib_peano(0, 0).
 fib_peano(s(0), s(0)).
 fib_peano(s(s(N)), R) :-
