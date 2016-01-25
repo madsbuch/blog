@@ -91,11 +91,13 @@ internal representation. Hence
 This is the same representation I
 [implemented in Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/) earlier on.
 
-As usual, the code is available on [Github](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.v)).
+As usual, the code is available on
+[Github](https://github.com/madsbuch/fibonacci/tree/master/coq).
 
 It is necessary to be able to reduce data to atomic pieces to do the proving
 we want to do. This is to create a total dependency between the type and its
-value. Imagine Java's `int` type. This type holds, at least, $2^{32}$ different
+value. Imagine Java's `int` type. This type holds, at least,
+$$2^{32}$$ different
 values without the compiler knowing which. In that case, it is not possible to
 reason about the return value of a function, which we need for the next
 section.
