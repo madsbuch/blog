@@ -51,6 +51,9 @@ the concept showcased.
    The introduction of __theorem proving__ using a programming language.
 9. [R](/blog/100-days-of-fibonacci-day-8-r/): Using R to plot the
    relationship between $$n$$ and $$fib(n)$$.
+10. [Haskell Types](/blog/100-days-of-fibonacci-day-9-haskell-types/):
+    Implementing the Fibonacci function using __dependent programming__
+    in Haskell.
 
 From here it is just following along. This project will stay current
 quite some time while we explore the idiosyncrasies of programming
