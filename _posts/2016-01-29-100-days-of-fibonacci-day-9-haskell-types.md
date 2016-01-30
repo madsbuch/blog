@@ -110,16 +110,16 @@ that the code _actually_ calculates the _n_'th Fibonacci number.
 
 ## Implementing Dependent Typing
 With dependent typing the type of a term _depends_ on its value. In
-Haskell we can benefit from making some parts of the types dependent on
-its values. This could for examble be statically sized lists to make
-matrix operations typesafe.
+Haskell we can benefit from making some parts of the types dependent.
+This could for example be statically sized lists to make
+matrix operations type-safe.
 
 In this post I implement complete dependency between terms and their type.
 The type for the Fibonacci term was implemented above. Now we just need to
 write some code that couples it to the value level.
 
-First we couple the datatype. We implement a value level datatype,
-`SNat`, which statically embed the size of the value.
+First we couple the datatype. I implemented a value level datatype,
+`SNat`, which embeds its size.
 
 {% highlight haskell %} 
 data SNat (a :: Nat) where
@@ -127,11 +127,12 @@ data SNat (a :: Nat) where
     SS   :: SNat n -> SNat (S n)
 {% endhighlight %}
 
-In the above the value level constructor has the type `SNat Z`, where we
-informally can read that it is the _zero_ element.
+In the above the value level constructor has the type `SNat Z`. From
+this type alone, we can read that it is the _zero_ element. 
 
-The successor value constructor has the type `SNat n -> SNat (S n)`
-where we construct the type according to the constructed value.
+The successor value constructor has the type `SNat n -> SNat (S n)`.
+Here the type is constructed depending on which number element we
+construct.
 
 An important property of above datatype is the bijection between
 a datatype and its type. This is what we use to statically reason about
@@ -156,9 +157,24 @@ fibonacci (SS SZ)       = (SS SZ)
 fibonacci (SS (SS n))   = add (fibonacci n) (fibonacci (SS n))
 {% endhighlight %}
 
-We have now build a Fibonacci function where the returned value is bijective
+We now build a Fibonacci function where the returned value is bijective
 to its type. Hence we are sure that what is computed at runtime is something
 we can predict on compile time.
+
+{% highlight bash %} 
+$ ghci -XDataKinds FibType.hs 
+...
+*FibType> let f = fibonacci $ SS $ SS $ SS $ SS $ SS $ SS $ SS $ SZ
+*FibType> :t f
+f :: SNat
+       ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S 'Z)))))))))))))
+*FibType> f
+13
+{% endhighlight %}
+
+As expected the type of the term _fibonacci 7_ has the type 13 (translated
+from the unary representation to decimal). After evaluating the term we also
+get the value _13_.
 
 # Applications for Dependent Programming
 All above is perfectly good. But why bother writing so much more code
@@ -166,7 +182,7 @@ to just have a dependency between the value and its type? Well, for most
 applications this is not necessary, but the technique can be used to set
 strict guarantees in certain situations.
 
-When you know the shape of the datatypes on compile-time it can be
+When you know the shape of the data-types on compile-time it can be
 advantageous to model this shape into the program. This could be
 some uses of matrices.
 
