@@ -12,13 +12,13 @@ day in my [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
 challenge.
 
 I already did [look at Haskell](/blog/100-days-of-fibonacci-day-0-haskell/).
-SO strictly speaking I should choose another language.
+So strictly speaking I should choose another language.
 However, I find that programming in Haskell's type system is different
 enough that I will consider it another language.
 
 # Day 9 - Haskell Types
 Today I implemented Fibonacci in the Haskell type system. That means that I
-can get the Haskell compiler to generate a _type_ for the _n_th
+can get the Haskell compiler to generate a _type_ for the _n_'th
 Fibonacci number.
 
 The first thing to do is to create a datatype for representing naturals.
@@ -178,7 +178,7 @@ one could use type safe matrix libraries to implement this functionality.
 
 # Conclusion
 In this post I first implemented the Fibonacci function on the type level.
-I made a type for the _n_th element in the Fibonacci series. This was
+I made a type for the _n_'th element in the Fibonacci series. This was
 done through data kinds and type families.
 
 After this a value level implementation was implemented. It was implemented
