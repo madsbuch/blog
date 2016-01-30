@@ -14,18 +14,20 @@ challenge.
 I already did [look at Haskell](/blog/100-days-of-fibonacci-day-0-haskell/).
 So strictly speaking I should choose another language.
 However, I find that programming in Haskell's type system is different
-enough that I will consider it another language.
+enough that I will consider it a different language.
 
 # Day 9 - Haskell Types
 Today I implemented Fibonacci in the Haskell type system. That means that I
 can get the Haskell compiler to generate a _type_ for the _n_'th
 Fibonacci number.
 
-The first thing to do is to create a datatype for representing naturals.
-We use the same approach as in the last part of the
+I first created a datatype for representing naturals.
+The approach as in the last part of the
 [Prolog implementation](/blog/100-days-of-fibonacci-day-4-prolog/) and
-use used in [Coq](/blog/100-days-of-fibonacci-day-7-coq/). This representation
-builds on the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms).
+use used in [Coq](/blog/100-days-of-fibonacci-day-7-coq/) was used.
+This representation
+builds on the [Peano axioms](https://en.wikipedia.org/wiki/Peano_axioms)
+and is straight forward to implement.
 
 {% highlight haskell %} 
 data Nat = Z | S Nat
@@ -38,7 +40,7 @@ thought of as a type of a type.
 In `ghci` we can inspect the kind of the type constructor `Z` by issuing
 `:kind Z`. The result returned is `Z :: Nat`.
 
-The next thing we do is to implement addition. In Haskell we use the
+Next I implemented addition. In Haskell we use the
 language extension _TypeFamilies_ to have a mechanism for implementing
 type level functions.
 
@@ -49,16 +51,11 @@ type instance Add (S a) b = S (Add a b)
 {% endhighlight %}
 
 Again we can try to inspect the kind of the type level function:
-`:kind Add (S Z) (S Z)` which yields `Add (S Z) (S Z) :: Nat`. Which
-we expected.
+`:kind Add (S Z) (S Z)` which yields `Add (S Z) (S Z) :: Nat` as
+expected.
 
-The next thing we want to do is to make the Haskell interpreter evaluate
-the expression. We want it to reduce the type `Add (S Z) (S Z)` until
-it can not be reduced any more. This process is known as brining the type on
-normal form.
-
-We can bring a type on normal form by using the `:kind! Add (S Z) (S Z)`
-operation.
+To actually calculate the Fibonacci type we need Haskell to reduce the `Add`
+expression. This is done using the `:kind! Add (S Z) (S Z)` operation.
 
 {% highlight bash %} 
 *FibType> :kind! Add (S Z) (S Z)
@@ -66,8 +63,8 @@ Add (S Z) (S Z) :: Nat
 = 'S ('S 'Z)
 {% endhighlight %}
 
-Now we have both a method of defining kind constructors and perform
-operations on these. Now we can implement Fibonacci on the type level.
+We can now both define type level datatypes (kinds) and do operations on these.
+Along this line I implemented Fibonacci straight forward in direct recursion.
 
 {% highlight haskell %} 
 type family Fibonacci (n :: Nat) :: Nat
@@ -77,17 +74,17 @@ type instance Fibonacci (S (S n))   = Add (Fibonacci n) (Fibonacci (S n))
 {% endhighlight %}
 
 To implement above type family I had to add the language extension
-_UndecidableInstances_. This is because we use the `Add` type
-family in the `Fibonacci` family.
+_UndecidableInstances_. This is because of the use of the `Add` type
+family in the `Fibonacci` type family.
 
 In this example, however, it is easy to see that the type family will
 always converge. `Add` converges (and does not need
 _UndecidableInstances_) and `Fibonacci` converges as the arguments
 to the recursive applications are decreasing.
 
-We can now evaluate and get the 7th Fibonacci number by invoking
-following command in the interpreter. The result is 13 which is
-expected.
+The last thing is to actually calculate Fibonacci. This can be done by
+issuing the `:kind!` as earlier on and read the result. The returned
+value is not easily readable but it is 13 as expected.
 
 {% highlight bash %}
 $ ghci FibType.hs -XDataKinds
@@ -97,17 +94,18 @@ Fibonacci (S (S (S (S (S (S (S Z))))))) :: Nat
 = 'S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S ('S 'Z))))))))))))
 {% endhighlight %}
 
-We now have a type for th _n_'th Fibonacci number. It is available
-from my
-[Fibonacci Github repo](https://github.com/madsbuch/fibonacci/tree/master/haskell).
-That alone is not worth
-much, and we need to have some code that does something on the value level
-to have a proper program.
+The code is as usual available on
+[Github](https://github.com/madsbuch/fibonacci/tree/master/haskell).
 
-What we can use above to is dependent programming: We have then constructed
-a program which have a one-to-one correspondence between values and types.
-This is used to statically reason about programs and put up guarantees that
-can be checked on compile time. In this case we can set up the guarantee
+Types alone does, however, not make a program. We need some kind of value
+level implementation. In the next section I make a similar implementation
+of the type level functions on the value level. Coupling the type and the
+value in an one-to-one correspondence yields
+[dependent programming](https://wiki.haskell.org/Dependent_type)
+
+Dependent types are used to statically reason about programs and
+put up guarantees that can be checked on compile time.
+In this case we can set up the guarantee
 that the code _actually_ calculates the _n_'th Fibonacci number.
 
 ## Implementing Dependent Typing
