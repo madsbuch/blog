@@ -3,7 +3,7 @@ layout: post
 title: 100 Days of Fibonacci - Day 9, Haskell Types
 video: false
 comments: false
-quote: "Today I implemented Fibonacci in the Haskell type system. That means that I can get the Haskell compiler to generate a _type_ for the _n_'th Fibonacci number."
+quote: "Today I implemented Fibonacci in the Haskell type system. That means that I can get the Haskell compiler to generate a type for the n'th Fibonacci number."
 ---
 
 Haskell has a flexible type system. It actually is Turing complete
