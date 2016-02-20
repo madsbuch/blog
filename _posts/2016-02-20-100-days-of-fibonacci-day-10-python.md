@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 100 Days of Fibonacci - Day X, Lisp
+title: 100 Days of Fibonacci - Day 10, Python
 video: false
 comments: false
 ---
@@ -68,6 +68,9 @@ $ python fib.py
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ..., 4181]
 {% endhighlight %}
 
+The implementation is available from my supporting
+[Git repository](https://github.com/madsbuch/fibonacci/tree/master/python).
+
 # List Comprehension
 The notation used above looks mostly like a very compact `for`-loop. For this
 relation to work we need to slightly open up our understanding of lists and
@@ -89,13 +92,13 @@ We now have the mindset set for the following mathematical interpretation of
 the above list comprehension to work. The following is a direct translation. 
 
 $$
-    \{ fib(x) | x \in \{0, 1, 2, 3, 4, 5, ..., 19\} \}
+    \{ \ fib(x) \ | \ x \in \{0, 1, 2, 3, 4, 5, ..., 19\} \ \}
 $$
 
 which would usually be written as follows.
 
 $$
-    \{ fib(x) | x \in \mathbb{N} \}
+    \{ \ fib(x) \ | \ x \in \mathbb{N} \ \}
 $$
 
 The reason why the last formulation is kind of futile is that Python
