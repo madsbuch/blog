@@ -62,7 +62,7 @@ A little quiz: Guess _n_ such that $$ fib(n) = 55 $$ (I have elaborated on this
 [tomorrow](/blog/100-days-of-fibonacci-day-4-prolog/)).
 
 The code can as usually be found on GIT
-[here](https://github.com/madsbuch/snippets/blob/master/fibonacci/Fib.scala)
+[here](https://github.com/madsbuch/fibonacci/tree/master/scala)
 
 # Continuation Passing Style
 Continuation Passing Style is not easy to read, and as such it is not a
