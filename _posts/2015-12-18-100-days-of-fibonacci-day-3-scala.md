@@ -7,12 +7,19 @@ comments: false
 This is an article in a series of articles. An overview of the entire
 project can be found [here](/blog/100-days-of-fibonacci-overview/).
 
+<!--{ Introduction to Scala from a JAVA point of view | }-->
 Coming from yesterdays Java, Scala is a naturally the next step. It is
 a functional language compiled to run on the Java Virtual Machine.
 It integrates easily with Java programs, and as such, it is often used
 in conjunction with Java. Javas API is also available in Scala. This
 makes it easier for Java developers to start with Scala if they
 want to dive into functional programming.
+
+This is the 4th day in my little
+[challenge](/blog/100-days-of-fibonacci-overview/) I am carrying
+out as a personal project. The first days elaborated on simple concepts,
+but later on more complicated concepts such as type level programming, parallel
+programming and even more theoretical subjects are explored.
 
 # Day 3 - Scala
 Today I present an implementation of Fibonacci in the Continuation Passing
