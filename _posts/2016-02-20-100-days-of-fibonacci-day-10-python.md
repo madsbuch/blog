@@ -7,7 +7,7 @@ comments: false
 
 <!--{ Introduction to the project | }-->
 It is yet another time for a post in my
-[100 days of Fibonacci](100-days-of-fibonacci-overview) challenge.
+[100 days of Fibonacci](/blog/100-days-of-fibonacci-overview) challenge.
 Today I am containing myself a bit and provide a link between
 a concept in programming and its root in mathematics.
 
@@ -28,7 +28,7 @@ also used.
 <!--{ Overview on the Python implementation | }-->
 The implementation is the direct recursive implementation accompanied
 by dynamic programming by momoization. This is the same implementation as
-my [Java](100-days-of-fibonacci-day-2-java/) implementation. It is not
+my [Java](/blog/100-days-of-fibonacci-day-2-java/) implementation. It is not
 new to implement it like this, and simply provides an implementation
 for generating the list using list comprehension.
 
