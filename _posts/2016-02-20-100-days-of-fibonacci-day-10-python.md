@@ -107,9 +107,9 @@ The reason why the last formulation is kind of futile is that Python
 uses strict evaluation: All terms are evaluated. The set of naturals is
 infinite and hence the computation will not halt.
 
-The last formulation is, however, indeed possible to formulate in programming.
-We just need a lazy evaluated language. As such we can formulate it, and use it,
-in the Haskell programming language. Following works given we have an
+The last formulation is, however, possible to formulate in programming.
+We just need a lazy evaluated language. As such we can formulate it, and use
+it, in the Haskell programming language. Following works given an
 implementation of the `fib` function:
 
 {% highlight haskell %}
