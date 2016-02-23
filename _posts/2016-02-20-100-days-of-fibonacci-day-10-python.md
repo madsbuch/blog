@@ -5,24 +5,25 @@ video: false
 comments: false
 ---
 
-<!--{ Introduction to the project | }-->
+<!--{ Introduction to the project | light informal fun }-->
 It is yet another time for a post in my
 [100 days of Fibonacci](/blog/100-days-of-fibonacci-overview) challenge.
 Today I am containing myself a bit and provide a link between
 a concept in programming and its root in mathematics.
 
-<!--{ Introduction to Python | }-->
+<!--{ Introduction to Python | light informal }-->
 The concept is list comprehension in Python. Python is a widely
 used programming language especially used as an easy language
 appropriate for beginners. The languages is in particular
 close to English. Furthermore it enforces good style by scoping by indentation.
 
-<!--{ My take on Fibonacci in python }-->
+<!--{ My take on Fibonacci in python | light informal}-->
 As mentioned I zoom in on the list comprehension feature in
 Python. I relate this feature with the way sets are defined in
 math. Lastly I talk a bit about the interpretation of infinite sets in
 programming.
 
+<!--{ Implementation details of Fibonacci in Python | technical formal }-->
 # Fibonacci in Python
 <!--{ Overview on the Python implementation | }-->
 The implementation is the direct recursive implementation accompanied
