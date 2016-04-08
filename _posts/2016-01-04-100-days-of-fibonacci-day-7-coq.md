@@ -1,6 +1,8 @@
 ---
-layout: post
 title: 100 Days of Fibonacci - Day 7, Coq
+author: Mads Buch
+date: 4 January 2016
+layout: post
 video: false
 comments: false
 ---
