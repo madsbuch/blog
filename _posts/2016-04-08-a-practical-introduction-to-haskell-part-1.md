@@ -339,9 +339,12 @@ unreadable code.
 Coming from an imperative language there are some main differences one should
 have in mind.
 
-There are __no sequential__ ordering of expressions. As the whole program is
-a tree, this tree needs to be reduced, and we don't care about the ordering
-of the expressions.
+There are __no sequential__ ordering of expressions. In pure functional
+programming we solely have functions. When we are not able to reduce a
+function expression any further, we have our result. And yes, the result
+is a function. To get greater insight in this the
+[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) is a
+good starting point.
 
 We also have a whole new vocabulary about functions:
 
@@ -352,20 +355,31 @@ We also have a whole new vocabulary about functions:
 * __Partial Functions:__ In the case of Haskell it means that a function does
   not pattern match on all cases of the datatype.
 
-And all the control structures, like `for-loops`, `while-loops`, `if-blocks`, 
-etc., we usually have accessible are formulated in functions. An interesting
-exercise is to actually implement the control structures.
+This vocabulary is also available to mainstream programming languages such
+as Java, C#, etc. But they are central to functional programming.
+
+The last difference to imperative programming is the lack of control
+structures. That's right, we don't have any `while`-loops,
+`if`-expression, etc. But fear not. We can express the same computation
+in functional programming. For the iteration idioms we use recursion
+and for the conditionals we use pattern matching.
 
 ## What I want vs. What to do
-When doing imperative programming we usually have a _state_. This state
-consists of various variables. When performing computation we modify the
+When doing imperative programming we have an explicit _state_. This state
+is concrete variables. When performing computation we modify the state
 in a linear fashion. We might concatenate a couple of strings and add
-some numbers. In the end we return either a value, or a pointer to the
-data we made.
+some numbers. In the end we return either a value, a pointer to the
+data we made, or nothing. The last case assumes that we did some effect
+full programming and that we are able to read the results from somewhere
+else. This is not how we do when thinking functional programming.
 
-This is not how we do when thinking functional programming. Instead
-we think about what we have and what we want. Functions should hereafter
-be thought as a mapping from one Type (set of elements) to another.
+In functional programming we think about what we have and what we want.
+These objects are reasoned about as inhabitants of a type. A type is here 
+understood as set of elements.
+
+A function is a map from one type to another. A whole program is understood
+as a map from some initial element of a given type, to another. This map,
+or function, is in Haskell called `main`.
 
 # Conclusion
 We have enough to formulate simple expressions and evaluate them in the
