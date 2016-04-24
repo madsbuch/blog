@@ -85,7 +85,7 @@ ex. Java. Instead, it has (and only has) inductive data types. In these
 [Peano naturals](https://en.wikipedia.org/wiki/Peano_axioms) has
 been implemented. This means that zero is represented as `O`, one
 as `S O`, two as `S (S O)` and so forth (this does not implement integers
-btu only naturals which is just fine for Fibonacci).
+but only naturals which is just fine for Fibonacci).
 
 Coq automatically expands syntactic decimal numbers to its
 internal representation. Hence
@@ -138,7 +138,7 @@ recursive implementation.
 The next thing is to prove that this definition is unambiguous. This means
 that _f_ will behave identical independent to the actual implementation. In
 Coq this looks like following (The whole code is available on
-[Github](https://github.com/madsbuch/snippets/blob/master/fibonacci/fib.v)).
+[Github](https://github.com/madsbuch/fibonacci/blob/master/coq/fib.v)).
 
 {% highlight coq %}
 Lemma there_is_only_one_fib :
