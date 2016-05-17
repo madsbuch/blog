@@ -36,7 +36,7 @@ proof.
 # Day 7 - Coq!
 As mentioned the two implementations are the directly recursive and
 the recursive with accumulation. These are both implementations we have
-[seen before](http://buchi.dk/blog/100-days-of-fibonacci-day-0-haskell/).
+[seen before](/blog/100-days-of-fibonacci-day-0-haskell/).
 But we use them again as they provide a good body for
 showcasing proving program equivalence. Next we have the two implementations.
 
@@ -92,7 +92,7 @@ Coq automatically expands syntactic decimal numbers to its
 internal representation. Hence
 5 is just syntactic sugar for `S S S S S O`.
 This is the same representation I
-[implemented in Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/) earlier on.
+[implemented in Prolog](/blog/100-days-of-fibonacci-day-4-prolog/) earlier on.
 
 As usual, the code is available on
 [Github](https://github.com/madsbuch/fibonacci/tree/master/coq).
