@@ -22,7 +22,7 @@ signals, coinductive data structures, etc.
 
 # Day 6 - JavaScript
 The core JavaScript implementation is like the iterative implementation
-I did [day 1 in C](http://buchi.dk/blog/100-days-of-fibonacci-day-1-c/).
+I did [day 1 in C](/blog/100-days-of-fibonacci-day-1-c/).
 It is expanded to directly emit an event carrying the result.
 
 {% highlight javascript %}

@@ -196,7 +196,7 @@ A = 10 .
 {% endhighlight %}
 
 The last piece of code also solves the puzzle from 
-[yesterday](http://buchi.dk/blog/100-days-of-fibonacci-day-3-scala/)
+[yesterday](/blog/100-days-of-fibonacci-day-3-scala/)
 where I asked what _n_ is for $$fib(n) = 55$$.
 
 The time and space complexity is generally not good when using this
@@ -220,7 +220,7 @@ machine instructions.
 As seen above it was indeed possible to implement naturals structurally.
 On a more general note, it is actually possible to model all problems in
 a structural manner. This is exploited in amongst other languages
-[Coq](http://buchi.dk/blog/100-days-of-fibonacci-day-7-coq/).
+[Coq](/blog/100-days-of-fibonacci-day-7-coq/).
 
 
 

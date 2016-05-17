@@ -52,7 +52,7 @@ spending time on this?"
 <!--{ Why other paradigms | }-->
 It shall not be a secret: There exists many paradigms and even more
 ways to solve problems (This is evident from my
-[100 days of Fibonacci](http://buchi.dk/blog/100-days-of-fibonacci-overview/)
+[100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
 challenge). None of these methods are right or wrong, but some fit better
 in given situations than others.
 

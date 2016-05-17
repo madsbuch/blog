@@ -28,24 +28,24 @@ for killing a bit of time.
 This is the list on my current progress and a little elaboration on
 the concept showcased.
 
-1.  [Haskell](http://buchi.dk/blog/100-days-of-fibonacci-day-0-haskell/):
+1.  [Haskell](/blog/100-days-of-fibonacci-day-0-haskell/):
     This post introduces __direct recursion__ and __accumulated recursion__
     in Haskell.
-2.  [C](http://buchi.dk/blog/100-days-of-fibonacci-day-1-c/):
+2.  [C](/blog/100-days-of-fibonacci-day-1-c/):
     C as an imperative language is introduced, and Fibonacci was implemented
     in an __iterative style__.
-3.  [Java](http://buchi.dk/blog/100-days-of-fibonacci-day-2-java/):
+3.  [Java](/blog/100-days-of-fibonacci-day-2-java/):
     The Fibonacci function is implemented by means of
     __dynamic programming__.
-4.  [Scala](http://buchi.dk/blog/100-days-of-fibonacci-day-3-scala/):
+4.  [Scala](/blog/100-days-of-fibonacci-day-3-scala/):
     Scala is the language, __Continuation Passing style__ is the concept.
-5.  [Prolog](http://buchi.dk/blog/100-days-of-fibonacci-day-4-prolog/):
+5.  [Prolog](/blog/100-days-of-fibonacci-day-4-prolog/):
     Fibonacci is here implemented in logic programming. Furthermore, we use
     ADTs to derive the argument to the function.
-6.  [Spreadsheet](http://buchi.dk/blog/100-days-of-fibonacci-day-5-spreadsheet/):
+6.  [Spreadsheet](/blog/100-days-of-fibonacci-day-5-spreadsheet/):
     The key idea is to abstract the concept of programming to include more
     than written text.
-7.  [JavaScript](http://buchi.dk/blog/100-days-of-fibonacci-day-6-javascript/):
+7.  [JavaScript](/blog/100-days-of-fibonacci-day-6-javascript/):
     Introducing the concept of __events__ in JavaScript. This is a base for
     the concepts of streams, signals, etc. which will be introduced later on.
 8.  [Coq](/blog/100-days-of-fibonacci-day-7-coq/):

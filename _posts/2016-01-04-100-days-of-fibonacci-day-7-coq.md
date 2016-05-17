@@ -8,7 +8,8 @@ comments: false
 ---
 
 I have been of a couple of days over the Christmas and New Year.
-But now it is time to start my [100 days of Fibonacci](http://buchi.dk/blog/100-days-of-fibonacci-overview/)
+But now it is time to start my
+[100 days of Fibonacci](/blog/100-days-of-fibonacci-overview/)
 project again.
 
 Today I chose Coq and I decided to look at proving properties about

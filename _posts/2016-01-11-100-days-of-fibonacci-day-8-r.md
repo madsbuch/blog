@@ -5,7 +5,8 @@ video: false
 comments: false
 ---
 
-I looked at quite some [different approaches to the Fibonacci function](http://buchi.dk/blog/100-days-of-fibonacci-overview/),
+I looked at quite some
+[different approaches to the Fibonacci function](/blog/100-days-of-fibonacci-overview/),
 and I start to wonder how the Fibonacci number develops with respect
 to its index. To look into this I want to make a 2D plot where the X-axis is
 the natural numbers and the Y-axis is the corresponding Fibonacci numbers.
