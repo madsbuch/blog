@@ -10,7 +10,7 @@ title:		    Mads Buch
 tagline:	    'blog'
 description:	'My personal blog.'
 baseurl:        "/blog"
-url:            http://buchi.dk/
+url:            http://madsbuch.com/
 commentsystem:	google
 disqus:		    example
 
@@ -28,6 +28,6 @@ cover:		assets/images/cover.jpg
     
 copyright:
   author:	Mads Buch
-  url:		http://buchi.dk
+  url:		http://madsbuch.com
   type_title:	Some rights reserved
   type_url:	http://creativecommons.org/licenses/by-nc/2.5
