@@ -22,7 +22,7 @@ The idea behind this project is manifold:
 * Look at many languages.
 
 But first of all, it is intended to just be a little side project
-for killing a bit of time.
+for me too explore the world of communication.
 
 # Languages
 This is the list on my current progress and a little elaboration on
