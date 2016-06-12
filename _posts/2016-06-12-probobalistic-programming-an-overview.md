@@ -1,7 +1,7 @@
 ---
 title: Probabilistic Programming - An Overview
 author: Mads Buch
-date: 12. June 2016
+date: 12 June 2016
 layout: post
 video: false
 comments: false
