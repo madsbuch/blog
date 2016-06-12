@@ -17,18 +17,19 @@ both formal studies and the Haskell type system. I found that after i began
 to enjoy increased knowledge about types, I became a much better programmer
 in languages like JavaScript, Java, and C#.
 
-Furthermore I saw that mu ventures into new languages was strictly more
+Furthermore I saw that my ventures into new languages was strictly more
 successful. It was much easier to learn a new language when I had the
 ability to boil everything down to the typing concepts.
 
-My thinking and research began. I concluded that the types system is
+My thinking and research began. I concluded that the type system is
 a latent framework for reasoning which is similar across programming
 languages. After learning types the link between Java interfaces and
 Haskell type classes was a much more coherent unit.
 
 My initial ventures into types was through a hard path. I spend hours with
-Pierces books and papers. The lingo in most cases confused more than they
-resolved, and it was very hard to link it to any existing knowledge.
+Pierces books and numerous papers. The lingo is in most
+cases more confusing than
+resolving, and it was very hard to link it to any existing knowledge.
 
 Therefor I decided to write a book that explains type theory for the
 programmer who has a strong foundation in languages such as JavaScript
@@ -40,9 +41,9 @@ The book is written using the lean methodology. This means that it will
 be gradually published, and that I am very keen on getting feedback all the
 time.
 
-I will publish a chapter when it is initially finished for publishing. This
+I will publish a chapter when it is initially finished for publishing. That
 is when I am content with the writing, have done copy writing and the chapter
-s coherent. 
+is coherent. 
 
 A published chapter is not written in stone. This means that I am more than 
 willing to rewrite a chapter when I get good arguments on alternative material.
@@ -69,6 +70,6 @@ change the curriculum of the book.
 | Sub Typing                  |  Staging             |
 
 The book is available on 
-[leanpub.com/types-for-the-eager-language-learner](https://leanpub.com/types-for-the-eager-language-learner). And I appreciate any encouragement.
+[leanpub.com/types-for-the-eager-language-learner](https://leanpub.com/types-for-the-eager-language-learner). I appreciate any encouragement.
 That does not have to be of monetary art, but just a word that my work is
 appreciated.
