@@ -1,7 +1,7 @@
 ---
 title: On Types for the Eager Language Learner
 author: Mads Buch
-date: 13 June 2016
+date: 12 June 2016
 layout: post
 video: false
 comments: false
