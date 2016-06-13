@@ -13,6 +13,31 @@ it is a good function that is is simple to understand yet complicated
 enough to show different programming techniques (unlike the _hello world_
 example one usually goes for).
 
+To follow the progress there are a couple of options: Either subscribe
+to my [Twitter profile](https://twitter.com/madspbuch) or sign up to
+my newsletter below. I promise only to send mails relevant to this
+project, and never too many. Maximally bi-weekly. 
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//madsbuch.us13.list-manage.com/subscribe/post?u=8d0671561804ecce8e34db3b9&amp;id=d8bd28f62c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <label for="mce-EMAIL">Subscribe to the mailing list</label>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8d0671561804ecce8e34db3b9_d8bd28f62c" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
 # Idea
 The idea behind this project is manifold:
 
