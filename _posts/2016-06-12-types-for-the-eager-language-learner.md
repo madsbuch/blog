@@ -5,7 +5,7 @@ date: 12 June 2016
 layout: post
 video: false
 comments: false
-image: 2016-06-12-types-for-the-eager-language-learner/lightning.jpg
+image: media/2016-06-12-types-for-the-eager-language-learner/lightning.jpg
 ---
 
 Recently I started writing a
