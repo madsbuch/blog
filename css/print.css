@@ -1,0 +1,46 @@
+.article-image{
+page-break-after:never
+}
+.post-content, 
+.bottom-teaser.cf{
+  padding-top:0!important
+}
+.bottom-teaser.cf{
+  margin:0
+}
+.post-reading, 
+.bottom-teaser.cf .isRight, 
+.cf.post-meta-text, 
+.post-meta center, 
+.post-image-image,
+.bottom-closer,
+.share, 
+.home-template .post-meta .post-tags-set,
+.pagination,
+.author-image,
+.subscribe icon-feed{
+  display:none;
+}
+
+body {
+    margin: 0 20% 0 20%;
+    font-family: 'latin_modern_roman10_regular';
+}
+
+#post-info h2, .scroll, #comments, footer, a.reversefootnote {
+    display: none;
+}
+
+a {
+    font-family: 'latin_modern_roman10_regular';
+    color: #000;
+    text-decoration:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'latin_modern_roman10_regular';
+}
+
+header {
+    background-image : none !important;
+}

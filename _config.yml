@@ -1,33 +1,67 @@
-# Dependencies
-markdown:	    kramdown
-highlighter:	rouge
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
 
-# Permalinks
-permalink:	    :title/
+# Site settings
+title: "Mads Buch"
+description: > # this means to ignore newlines until "email:"
+   Professional Blog
 
-# Setup
-title:		    Mads Buch
-tagline:	    'blog'
-description:	'My personal blog.'
-baseurl:        "/blog"
-url:            http://madsbuch.com/
-commentsystem:	google
-disqus:		    example
+email: madspbuch@gmail.com
+#blog logo
+logo: "/assets/images/logo.png"
+# blog cover
+cover: "/assets/images/cover.jpg"
 
-author:
-  name:		'Mads Buch'
-  url:		https://plus.google.com/+MadsBuch?rel=author
-  gpUrl:	https://plus.google.com/+MadsBuch
+name: 'Mads Buch'
+author: 'Mads Buch'
+author_image: "/assets/images/author.png"
 
 paginate:	5
 
-# Custom vars
-icon:		assets/images/icon.png
-cover:		assets/images/cover.jpg
+# Permalinks
+permalink:	  :title/
 
-    
-copyright:
-  author:	Mads Buch
-  url:		http://madsbuch.com
-  type_title:	Some rights reserved
-  type_url:	http://creativecommons.org/licenses/by-nc/2.5
+# Dependencies
+markdown:	    kramdown
+highlighter:  rouge
+
+url: "http://madsbuch.com" # the base hostname & protocol for your site
+baseurl: "/blog"
+
+#used to display twitter cards
+twitter_handle: '@madspbuch'
+
+#fill in disqus shortname to use disqus
+#disqus: disqus-shortname
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/madspbuch
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+#  - icon:	facebook
+#    url:	https://facebook.com/???
+#    desc: Connect with me facebook
+#    share_url: https://www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/madsbuch
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+#  - icon:	google-plus
+#    url:	https://google.com/???
+#    desc:	Add me on google+
+#    share_url:
+#    share_title:
+#    share_link:
