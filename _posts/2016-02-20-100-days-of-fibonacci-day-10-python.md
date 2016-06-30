@@ -3,6 +3,8 @@ layout: post
 title: 100 Days of Fibonacci - Day 10, Python
 video: false
 comments: false
+image: /assets/images/cover.jpg
+image2: /assets/images/cover.jpg
 ---
 
 <!--{ Introduction to the project | light informal fun }-->
@@ -24,6 +26,7 @@ math. Lastly I talk a bit about the interpretation of infinite sets in
 programming.
 
 <!--{ Implementation details of Fibonacci in Python | technical formal }-->
+
 # Fibonacci in Python
 <!--{ Overview on the Python implementation | }-->
 The implementation is the direct recursive implementation accompanied
