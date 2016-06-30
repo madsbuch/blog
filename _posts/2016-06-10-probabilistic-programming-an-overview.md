@@ -5,6 +5,8 @@ date: 10 June 2016
 layout: post
 video: false
 comments: false
+tags: featured
+categories: Probabilistic Programming
 ---
 
 My current academic endeavors are in the field of probabilistic programming. I
