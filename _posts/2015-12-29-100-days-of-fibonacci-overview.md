@@ -3,6 +3,8 @@ layout: post
 title: 100 Days of Fibonacci - An Overview
 video: false
 comments: false
+tags: featured
+categories: 100 Days of Fibonacci
 ---
 
 A couple of weeks ago I started this project. The idea was to program
