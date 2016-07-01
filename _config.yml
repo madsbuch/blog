@@ -37,6 +37,9 @@ twitter_handle: '@madspbuch'
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
+# Open Graph
+fb_app_id: 1727612590830968
+
 # social icons and sharing options
 social:
   - icon:	twitter

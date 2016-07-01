@@ -34,6 +34,12 @@
   <meta property="og:image" content="{% if page.image %}{{site.url}}{{site.baseurl}}{{ page.image }}{% else %}{{site.url}}{{site.baseurl}}{{ site.logo}}{% endif %}" />
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" >
   <meta property="og:type" content="blog" />
+
+  {% if site.fb_app_id %}
+  <meta property="fb:app_id" content="{{} site.fb_app_id }}" />
+  {% endif %}
+  
+
   {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
