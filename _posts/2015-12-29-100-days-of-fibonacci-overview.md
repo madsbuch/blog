@@ -85,6 +85,8 @@ the concept showcased.
 11. [Python](/blog/100-days-of-fibonacci-day-10-python/):
     Focusing on the relationship between __list comprehensions__ and
     __set definitions__ in mathematics.
+12. [Fixed Point](/blog/100-days-of-fibonacci-day-11-fixed-point/):
+    Introducing the theoretical concept of fixed points.
 
 From here it is just following along. This project will stay current
 quite some time while we explore the idiosyncrasies of programming
