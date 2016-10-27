@@ -1,6 +1,9 @@
 ---
+layout: post
 title: Proving Stuff in Haskell
 author: Mads Buch
+video: false
+comments: false
 ---
 
 This is my give on the relation ship between mathematical proofs and
