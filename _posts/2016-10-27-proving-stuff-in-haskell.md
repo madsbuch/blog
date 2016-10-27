@@ -129,8 +129,8 @@ _n_ on the right side is the identity of _n_. `plus_id_l` is when we add 0
 on the left side.
 
 $$
-    n+0 = n \text{(plus_id_r)} \\
-    0+n = n \text{(plus_id_l)}
+    n+0 = n \ \text{(plus_id_r)} \\
+    0+n = n \ \text{(plus_id_l)}
 $$
 
 `plus_id_l` is given directly from our definition of addition. But `plus_id_r`
