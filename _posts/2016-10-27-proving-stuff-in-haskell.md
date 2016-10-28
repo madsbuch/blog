@@ -14,8 +14,8 @@ The source used in this article is available as
 [a Gist](https://gist.github.com/madsbuch/12043c4ad1c1fd0a80008ffb443e29d7).
 
 # Proofs and Programming
-First, what is a proof? A proof is an inhibitor of a proposition. A proposition
-is said to be true, if there exists any such inhibitor. This might seem quite
+First, what is a proof? A proof is a series of deductive arguments, such that
+the proposition is justified. This might seem quite
 abstract, so let us look at a concrete example using the Peano naturals for
 representing natural numbers.
 
@@ -23,18 +23,20 @@ $$
     1+1 = 2
 $$
 
-As the proposition has no quantifiers we can directly reduce the expression
-using the reduction rules from the Peano axioms. without further ado we can
-write above expression in the completely reduced form:
+As the proposition has no quantifiers, we can directly use the first
+argument to reduce the expression. That is, the one given by the
+usual definition of addition over Peano numbers.
+We then have following expression.
 
 $$
     2 = 2
 $$
 
-Now we have a mathematical object, a propositional claim, for which we
-need to support that it has an inhibitor. We know from the Peano axioms that
+This is still a mathematical object, a propositional claim.
+We know from the Peano axioms, that
 syntactical equivalence satisfies reflexivity, symmetry, and transitivity.
-Henceforth we have an inhibitor.
+Henceforth the properties of equality are satisfied and we may end our
+deductive sequence.
 
 Next we want to translate above into programming.
 
@@ -44,7 +46,7 @@ we know that propositions are types and proofs are programs. Alright, so we
 need to make an expression that has above expression as its type,
 and a program which inhibits this type.
 
-First we need to define our objects: Peano naturals and Equality. Peano
+First, we need to define our objects: Peano naturals and Equality. Peano
 naturals are implemented the usual way. This is well elaborated in a 
 [previous post](/blog/100-days-of-fibonacci-day-9-haskell-types/).
 Equality is defined as follows.
@@ -54,9 +56,14 @@ data Refl a b where
   Refl :: Refl a a
 ```
 
-Evidently we can only inhibit this type if the types `a` and `b` are
-identical. With respect to the Curry Howard correspondence this is also a unit 
-type - it is not possible to attach further data to the constructor.
+Evidently, we the value `Refl` can only inhibit the type `Refl a b` 
+if the types `a` and `b` are identical.
+With respect to the Curry Howard correspondence, the `Refl` value also
+has unit type - it is not possible to attach further data to the constructor.
+
+We have defined equality in terms of reflection. However, we need equality to
+also satisfy symmetry and transitivity. In the the source, we have the code
+needed for that.
 
 We now want to make the type[^prefix] for our proof, or, the equivalent to the 
 proposition stated above:
@@ -65,8 +72,12 @@ proposition stated above:
 onePlusOneEqualsTwo :: Refl (Add (S Z) (S Z)) (S (S Z))
 ```
 
+The `Add` in the type definition is a type family defined in the source. It is
+defined as we would usually define addition over Peano naturals.
+
 To prove it we need to make an inhibitor to the that type. This is very simple
-for this case as the type level expression can be directly reduced.
+for this case as the type level expression are directly reduced pr. Haskell
+semantics of type families.
 
 ```haskell
 onePlusOneEqualsTwo = Refl
@@ -75,7 +86,7 @@ onePlusOneEqualsTwo = Refl
 As it compiles[^compiler] it shows that Haskell is content with the proof.
 
 # Quantifiers
-We want abstract our proofs. In proving terminology this is done through
+We want to abstract our proofs. In proving terminology this is done through
 quantifiers.
 
 To have a more graspable problem that includes only quantification,
@@ -86,7 +97,7 @@ $$
     \forall a, b \in : \lnot( a \land b ) = \lnot a \lor  \lnot b
 $$
 
-here _a_ and _b_ can only assume two value, _true_ and _false_.
+here _a_ and _b_ can only assume two values, _true_ and _false_.
 
 ```haskell
 deMorgan :: SBool a -> SBool b -> Refl (Not (And a b)) (Or (Not a) (Not b))
@@ -152,14 +163,25 @@ The next case is the induction case. Here we fold out the value such that if
 reduced value.
 
 # Discussion
-It is indeed possible to prove stuff in Haskell. If one has a software
+It is indeed possible to prove stuff in Haskell. But it is not further
+practical. This is in particular because the language is not designed with
+the constructions we need, such as dependent types. The are instead simulated
+through GADTs.
+
+The closest languages to Haskell, that are actually suited for
+this is languages such as Idris. It has all the facilities
+needed for incorporating proofs into ones code.
+
+If one has a software
 development background firmly grounded in OOP (Java, C#), it requires quite
 some time to wrap ones head around the new way to understand types.
 
 That we can do above is mostly of academic interest: How do make _sure_ that
 certain compilers indeed do what they should do etc. But the techniques are
-becoming steadily more accessible to all programmers. New languages like
-Rust brings in type constructions to domains like systems programming.
+becoming steadily more accessible to all programmers.
+
+New languages, like Idris, brings in type constructions to formally
+reason about the software one writes.
 
 [^prefix]: We solely use prefix notation to simplify the syntax.
 [^compiler]: Well, we need to set some compiler flags to make sure that all cases are covered.
