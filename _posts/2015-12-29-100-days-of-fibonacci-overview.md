@@ -28,16 +28,17 @@ project, and never too many. Maximally bi-weekly.
        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="//madsbuch.us13.list-manage.com/subscribe/post?u=8d0671561804ecce8e34db3b9&amp;id=d8bd28f62c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="//madsbuch.us13.list-manage.com/subscribe/post?u=8d0671561804ecce8e34db3b9&amp;id=586fd816d0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
-    <label for="mce-EMAIL">Subscribe to the mailing list</label>
+    <label for="mce-EMAIL">Subscribe to our mailing list</label>
     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8d0671561804ecce8e34db3b9_d8bd28f62c" tabindex="-1" value=""></div>
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8d0671561804ecce8e34db3b9_586fd816d0" tabindex="-1" value=""></div>
     <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
     </div>
 </form>
 </div>
+
 <!--End mc_embed_signup-->
 
 # Idea
