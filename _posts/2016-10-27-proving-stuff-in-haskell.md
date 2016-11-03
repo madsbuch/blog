@@ -184,8 +184,9 @@ New languages, like Idris, brings in type constructions to formally
 reason about the software one writes.
 
 # Final Remarks
-First, a thanks to [Aslan Askarov](aslan askarov) for providing feedback on
-this article. It has been incorporated to provide a more coherent article.
+First, a thanks to [Aslan Askarov](http://askarov.net/) for providing
+valuable feedback on this article. It has been incorporated to provide a
+more coherent article.
 
 This article was a precursor for a presentation at a
 [spare time teaching](http://www.sparetimeteaching.dk/about.php) event
