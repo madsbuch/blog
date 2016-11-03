@@ -183,5 +183,13 @@ becoming steadily more accessible to all programmers.
 New languages, like Idris, brings in type constructions to formally
 reason about the software one writes.
 
+# Final Remarks
+First, a thanks to [Aslan Askarov](aslan askarov) for providing feedback on
+this article. It has been incorporated to provide a more coherent article.
+
+This article was a precursor for a presentation at a
+[spare time teaching](http://www.sparetimeteaching.dk/about.php) event
+at Aarhus university. Thanks to them for letting me host the presentation.
+
 [^prefix]: We solely use prefix notation to simplify the syntax.
 [^compiler]: Well, we need to set some compiler flags to make sure that all cases are covered.
