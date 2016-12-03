@@ -1,11 +1,14 @@
 ---
 title: The Probability Monad
 author: Mads Buch
+layout: post
+video: false
+comments: false
 papers:
     - ramsey2012
 ---
 
-<!.. Why is tis interesting? ..>
+<!-- Why is this interesting? -->
 What are the foundational structures of probabilities? How do we design
 a language making it easy to model probabilistic problems? Oftentimes
 nowadays the modeling happens directly in terms of vectors and matrices,
@@ -15,7 +18,8 @@ In this article we explore a structure, the monad, that spans probabilities.
 It is based on the article _Stochastic Lambda Calculus and Monads of 
 Probability Distributions_ by Ramsey and Pfeffer.
 
-The source for this article is available as a gist from Github.
+The source for this article is available as a
+[gist on Github](https://gist.github.com/madsbuch/5a8a1fc9b70621dd93dd70058754b126).
 
 # A Monad
 A monad is a mathematical structure with wide applications in
@@ -159,7 +163,8 @@ instance SupportMonad P where
 ...
 ```
 
-For the full source I once again refer to the gist on Github.
+For the full source I once again refer to the
+[gist on Github](https://gist.github.com/madsbuch/5a8a1fc9b70621dd93dd70058754b126)..
 
 # Making Distributions
 In this section we will take a look on how to construct some interesting
