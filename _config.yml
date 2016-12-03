@@ -9,9 +9,15 @@ title: "Mads Buch"
 description: > # this means to ignore newlines until "email:"
    Professional Blog
 
+collections:
+  - papers
+  - gists
+
 email: madspbuch@gmail.com
+
 #blog logo
 logo: "/assets/images/logo.png"
+
 # blog cover
 cover: "/assets/images/cover.jpg"
 
@@ -30,6 +36,8 @@ highlighter:  rouge
 
 url: "http://madsbuch.com" # the base hostname & protocol for your site
 baseurl: "/blog"
+
+###### SOCIAL
 
 #used to display twitter cards
 twitter_handle: '@madspbuch'
