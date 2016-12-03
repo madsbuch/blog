@@ -6,6 +6,7 @@ video: false
 comments: false
 papers:
     - ramsey2012
+categories: Probabilistic Programming
 ---
 
 <!-- Why is this interesting? -->
@@ -74,19 +75,23 @@ The lowermost three boxes are the most interesting. Those are the queries, the
 operations we can use on a distribution to make sense of it.
 
 # The Expectation Monad
+This section elaborates on a measure theoretic approach to the
+probability monad. We represent the distribution as a continuation
+that takes a measure function and returns an expectation. 
+
 First we will take a look at our monad type.
 
 ```haskell
 -- Probability Monad
-newtype P a = P (( a -> Double) -> Double)
+newtype PExp a = P (( a -> Double) -> Double)
 ```
 
-It is worth looking a bit into what happens here. We have the constructor `P`,
-that takes a function from a _measure function_ to a double. intuitively we
-take a function that can calculate the expectation of some measure happening.
+It is worth looking into what happens here. We have the constructor
+`PExp`, that takes a function, a _measure function_, and gives the
+expectation.
 
-The monadic structure of probability distributions can be implemented as
-follows:
+The monadic structure of probability distributions is in this setting
+implemented as follows.
 
 ```haskell
 instance Monad P where
@@ -97,12 +102,21 @@ instance Monad P where
                   in d g)
 ```
 
-The return function is directly the same as the dirac distribution. That is,
-it takes a single element of it's domain and spans a distribution where that
-element is the only one.
+From here the expectation monad is easily implemented as the whole
+monad type is build around it.
+
+```haskell
+instance ExpMonad PExp where
+  expectation h (PExp d) = d h
+```
+
+We could now start to do experiments base on this. But we would much
+rather like to play with `support` and `sample` also. These, however,
+are quite difficult to implement around the type of `PExp` so we are
+going to attack this from another angle.
 
 # Generalizing
-The above implementation of the monadic type is not very suited for other than
+The above implementation of the monad type is not very suited for other than
 the expectation query. To make something more suited, we will try to stay true
 to the paper and implement a type such that we can hold data as it is defined
 
@@ -118,7 +132,7 @@ is due to the _Bind_ constructor. This poses a change of the type, and can not
 be implemented by ADTs.
 
 In the instances for the monad and probability monad we simply defer everything
-to used directly by the queries
+to used directly by the queries.
 
 ```haskell
 -- P is a monad

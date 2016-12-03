@@ -51,7 +51,7 @@ not spam you, but send a mail from time to time - at maximum bi-weekly.
 To develop anything new, we need to know what new is. Here I index studies
 on existing systems and concepts.
 
-* [Genesis of Probabilistic Programming](#) - Coming very soon!
+* [The Probability Monad](/blog/the-probability-monad/) - Coming very soon!
 
 # Applications
 Though applications is not strictly an academic necessity, it is kind
