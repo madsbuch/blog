@@ -25,15 +25,16 @@ The source for this article is available as a
 # A Monad
 A monad is a mathematical structure with wide applications in
 functional programming. The reason is that it helps hiding away
-some state, it progresses a computational context we can
-consider in a linear fashion.
+some state and provides primitives for progressing the structure in
+a linear fashion.
 
-It is useful to know about monads. Not just for understanding this article,
-but also for the numerous other structures that span monads.
+It is useful to know about monads. Not just for understanding the probability
+monad, but because they are an important tool to architect applications using
+functional techniques.
 
 A monad is a well elaborated subject, and as such I am not elaborating on it
 more than its algebraic structure. To get a proper overview on there exists
-plenty of resources online.
+plenty resources.
 
 For our practical use of the monad we need to implement following functions
 in a way such that they satisfy the monadic laws.
@@ -46,14 +47,15 @@ return :: a -> m a
 These are what constitutes monads.
 
 # Probabilities
-The probability of something happening is constituted by a distributions. It
-describes potential outcomes that event might have and by what chance it
-happens.
+When talking about events and the probability that they happen we often
+talk in terms of distributions. In its most abstract form a distribution
+is simply a total function, i.e. all inputs needs to be mapped to outputs.
+This is also the view we take on it and the monad turns out to be a way of
+packaging these programs to only allow certain operations on them.
 
-We talk only about discrete probability distributions in this article. This
+We only discuss discrete probability distributions here. This
 makes it considerable easier to reason about, but also poses some limitations
-as we can't model continuous distributions. We can,
-however, approximate them to an arbitrary degree.
+as we can only model continuous distributions to an arbitrary degree.
 
 On the distributions we want to do certain queries. Some often used ones are
 the `expectation`, the `support`, and the `sample` query. The `expectation`
@@ -61,7 +63,13 @@ and the `support` queries are much easier to think about when only
 considering discrete distributions.
 
 Lastly we also need an operation for building distributions. In this work
-we take offset in a single function called `choose`.
+we take offset in a single function called `choose` which act as a construct
+that binary chooses between two distribution with a certain probability.
+
+To end choosing we use the return construction, which is th same as the Dirac
+distribution. In some papers and languages dirac is used as the name for
+return.
+
 
 # Class Hierarchy
 To get an overview of the implementation of the probability monad
