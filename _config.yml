@@ -12,6 +12,7 @@ description: > # this means to ignore newlines until "email:"
 collections:
   - papers
   - gists
+  - curated
 
 email: madspbuch@gmail.com
 
