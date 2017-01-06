@@ -6,8 +6,8 @@ gems:
 
 # Site settings
 title: "Mads Buch"
-description: > # this means to ignore newlines until "email:"
-   Professional Blog
+description: >
+   Technical articles
 
 collections:
   - papers
