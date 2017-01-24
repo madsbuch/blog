@@ -6,16 +6,16 @@ video: false
 comments: false
 ---
 
-This is my give on the relation ship between mathematical proofs and
-programming languages. Many details on exact implementation have been left out
-with the aim of clarity and conceptual coherency.
+This article is my give on the relationship between mathematical proofs and
+programming languages. Many details on specific implementation have been
+left out with the aim for clarity and conceptual coherency.
 
 The source used in this article is available as
 [a Gist](https://gist.github.com/madsbuch/12043c4ad1c1fd0a80008ffb443e29d7).
 
 # Proofs and Programming
 First, what is a proof? A proof is a series of deductive arguments, such that
-the proposition is justified. This might seem quite
+the proposition is justified. This description might seem quite
 abstract, so let us look at a concrete example using the Peano naturals for
 representing natural numbers.
 
@@ -26,19 +26,19 @@ $$
 As the proposition has no quantifiers, we can directly use the first
 argument to reduce the expression. That is, the one given by the
 usual definition of addition over Peano numbers.
-We then have following expression.
+We then have the following expression.
 
 $$
     2 = 2
 $$
 
-This is still a mathematical object, a propositional claim.
+We still have a mathematical object, a propositional claim.
 We know from the Peano axioms, that
 syntactical equivalence satisfies reflexivity, symmetry, and transitivity.
-Henceforth the properties of equality are satisfied and we may end our
+Henceforth the properties of equality are satisfied, and we may end our
 deductive sequence.
 
-Next we want to translate above into programming.
+Next, we want to translate above into programming.
 
 ## In Haskell
 From the [Curry–Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence)
