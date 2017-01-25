@@ -46,8 +46,8 @@ we know that propositions are types and proofs are programs. Alright, so we
 need to make an expression that has above expression as its type,
 and a program which inhibits this type.
 
-First, we need to define our objects: Peano naturals and Equality. Peano
-naturals are implemented the usual way. This is well elaborated in a 
+First, we need to define our objects: Peano naturals and Equality. We implement
+Peano naturals the usual way. I elaborate on this in a 
 [previous post](/blog/100-days-of-fibonacci-day-9-haskell-types/).
 Equality is defined as follows.
 
@@ -58,11 +58,12 @@ data Refl a b where
 
 Evidently, we the value `Refl` can only inhibit the type `Refl a b` 
 if the types `a` and `b` are identical.
-With respect to the Curry Howard correspondence, the `Refl` value also
-has unit type - it is not possible to attach further data to the constructor.
+Concerning the Curry-Howard correspondence, the `Refl` value also
+has the unit type - it is not possible to attach further data to
+the constructor.
 
-We have defined equality in terms of reflection. However, we need equality to
-also satisfy symmetry and transitivity. In the the source, we have the code
+We have defined equality in terms of reflection. However, we need equality
+also to satisfy symmetry and transitivity. In the source, we have the code
 needed for that.
 
 We now want to make the type[^prefix] for our proof, or, the equivalent to the 
@@ -75,9 +76,10 @@ onePlusOneEqualsTwo :: Refl (Add (S Z) (S Z)) (S (S Z))
 The `Add` in the type definition is a type family defined in the source. It is
 defined as we would usually define addition over Peano naturals.
 
-To prove it we need to make an inhibitor to the that type. This is very simple
-for this case as the type level expression are directly reduced pr. Haskell
-semantics of type families.
+To prove it we need to make an inhibitor to that type. The program
+is very simple
+for this case as the Haskell compiler reduces the type level expression 
+per semantics of type families.
 
 ```haskell
 onePlusOneEqualsTwo = Refl
@@ -86,11 +88,11 @@ onePlusOneEqualsTwo = Refl
 As it compiles[^compiler] it shows that Haskell is content with the proof.
 
 # Quantifiers
-We want to abstract our proofs. In proving terminology this is done through
+We want to abstract our proofs. In proving terminology, we do this through
 quantifiers.
 
 To have a more graspable problem that includes only quantification,
-without induction, we deroute to boolean algebra. Here we can
+without induction, we detour to boolean algebra. Here we can
 try to formalize De Morgan's theorem:
 
 $$
@@ -110,8 +112,8 @@ deMorgan SFalse SFalse = Refl
 We simply provide an inhibitor to the type based on
 pattern matching. This is the same as proving by case analysis.
 
-To understand what goes on we can consider the type expression to be
-instantiated in each case. Afterwards it is reduced per the semantics
+To understand what goes on we instantiate the type expression 
+in each case. Afterward, the compiler reduces per the semantics
 of the `Not`, `And`, and `Or` type families. In the first case we instantiate
 the type expression such that.
 
@@ -122,7 +124,7 @@ deMorgan :: SBool Tru -> SBool Tru
 
 This instantiation is from the value `STrue` which has the type `SBool Tru`.
 The compiler then reduces the expression and derives that
-`Refl :: Refl Fls Fls`. From the interpreter we get that.
+`Refl :: Refl Fls Fls`. From the interpreter, we get that.
 
 ```
 *Proof> :t deMorgan STrue STrue
@@ -154,7 +156,7 @@ plus_id_r (Succ x) = gcastWith (plus_id_r x) Refl
 ```
 
 The first case is the base case. We know that the value is `Zero` and
-the type for that is derived to `Z`. It is immediately visible that `Refl`
+hence we can derive the type to `Z`. It is immediately visible that `Refl`
 inhibits the type `Refl Z  Z`.
 
 The next case is the induction case. Here we fold out the value such that if
@@ -164,27 +166,28 @@ reduced value.
 
 # Discussion
 It is indeed possible to prove stuff in Haskell. But it is not further
-practical. This is in particular because the language is not designed with
-the constructions we need, such as dependent types. The are instead simulated
-through GADTs.
+practical. The reason is in particular because the language
+is not designed with
+the constructions we need, such as dependent types. We simulate
+them through GADTs.
 
-The closest languages to Haskell, that are actually suited for
-this is languages such as Idris. It has all the facilities
-needed for incorporating proofs into ones code.
+The closest languages to Haskell that are suited for
+this is languages such as Idris and Gallina (Coq). They have all the facilities
+needed for incorporating proofs into one's code.
 
 If one has a software
 development background firmly grounded in OOP (Java, C#), it requires quite
-some time to wrap ones head around the new way to understand types.
+some time to wrap one's head around the new way to understand types.
 
 That we can do above is mostly of academic interest: How do make _sure_ that
 certain compilers indeed do what they should do etc. But the techniques are
 becoming steadily more accessible to all programmers.
 
-New languages, like Idris, brings in type constructions to formally
-reason about the software one writes.
+New languages, like Idris, come with type constructions to formally
+reason about our software.
 
 # Final Remarks
-First, a thanks to [Aslan Askarov](http://askarov.net/) for providing
+First, thanks to [Aslan Askarov](http://askarov.net/) for providing
 valuable feedback on this article. It has been incorporated to provide a
 more coherent article.
 
