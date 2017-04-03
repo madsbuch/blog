@@ -1,6 +1,6 @@
-#Blog
+# Blog
 
-read my blog [Here](http://buchi.dk/blog/)
+read my blog [Here](http://madsbuch.dk/blog/)
 
 ## Why Manage a Blog Through Git?
 I use git to blog for multiple reasons:
