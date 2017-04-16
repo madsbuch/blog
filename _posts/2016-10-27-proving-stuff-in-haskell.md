@@ -44,7 +44,7 @@ Next, we want to translate above into programming.
 From the [Curry–Howard correspondence](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence)
 we know that propositions are types and proofs are programs. Alright, so we
 need to make an expression that has above expression as its type,
-and a program which inhibits this type.
+and a program which inhabits this type.
 
 First, we need to define our objects: Peano naturals and Equality. We implement
 Peano naturals the usual way. I elaborate on this in a 
@@ -56,7 +56,7 @@ data Refl a b where
   Refl :: Refl a a
 ```
 
-Evidently, we the value `Refl` can only inhibit the type `Refl a b` 
+Evidently, we the value `Refl` can only inhabit the type `Refl a b` 
 if the types `a` and `b` are identical.
 Concerning the Curry-Howard correspondence, the `Refl` value also
 has the unit type - it is not possible to attach further data to
@@ -76,7 +76,7 @@ onePlusOneEqualsTwo :: Refl (Add (S Z) (S Z)) (S (S Z))
 The `Add` in the type definition is a type family defined in the source. It is
 defined as we would usually define addition over Peano naturals.
 
-To prove it we need to make an inhibitor to that type. The program
+To prove it we need to make an inhabitant to that type. The program
 is very simple
 for this case as the Haskell compiler reduces the type level expression 
 per semantics of type families.
@@ -109,7 +109,7 @@ deMorgan SFalse STrue  = Refl
 deMorgan SFalse SFalse = Refl
 ```
 
-We simply provide an inhibitor to the type based on
+We simply provide an inhabitant to the type based on
 pattern matching. This is the same as proving by case analysis.
 
 To understand what goes on we instantiate the type expression 
@@ -157,7 +157,7 @@ plus_id_r (Succ x) = gcastWith (plus_id_r x) Refl
 
 The first case is the base case. We know that the value is `Zero` and
 hence we can derive the type to `Z`. It is immediately visible that `Refl`
-inhibits the type `Refl Z  Z`.
+inhabits the type `Refl Z  Z`.
 
 The next case is the induction case. Here we fold out the value such that if
 `n = Succ x`, then `x = n-1` - we reduce this on our argument. We justify that 
